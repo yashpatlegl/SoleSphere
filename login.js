@@ -25,7 +25,7 @@ fetch('/backend/accounts.json')
     .then(response => response.json())
     .then(data => {
         accounts = data;
-        console.log('Accounts loaded:', accounts); // For debugging
+        // console.log('Accounts loaded:', accounts); // For debugging
     });
 
 
@@ -68,14 +68,21 @@ registerBtn.addEventListener('click', () => {
 
 // Event listener for Sign In
 loginBtn.addEventListener('click', () => {
+
+
     const email = document.querySelector('.sign-in input[type="email"]').value;
     const password = document.querySelector('.sign-in input[type="password"]').value;
 
     const user = accounts.find(account => account.email === email && account.password === password);
 
     if (user) {
+        sessionStorage.setItem("userLoggedIn", "true");
+        // updateNavbar();
         console.log(`Login successful: Welcome, ${user.username}!`);
-        alert(`Welcome back, ${user.username}!`);
+        event.preventDefault();
+        // Redirect to index.html
+        window.location.href = "index.html";
+
         // Redirect to another page or display user dashboard here
     } else {
         console.log('Invalid email or password.');
@@ -85,6 +92,25 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active"); // Switch to Sign Up
 });
 
+function updateNavbar() {
+    if (sessionStorage.getItem("userLoggedIn") === "true") {
+        let iconDiv = document.querySelector(".icon");
+
+        let wishlistIcon = document.createElement("i");
+        wishlistIcon.className = "fa fa-heart";
+        wishlistIcon.style.fontSize = "24px";
+
+        let shoppingBagIcon = document.createElement("i");
+        shoppingBagIcon.className = "fa fa-shopping-bag";
+        shoppingBagIcon.style.fontSize = "24px";
+
+        iconDiv.appendChild(wishlistIcon);
+        iconDiv.appendChild(shoppingBagIcon);
+    }
+}
+
+// Call this function when the page loads
+window.onload = updateNavbar;
 
 
 // // Fetch accounts data
