@@ -1,0 +1,172 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+h1{ 
+    text-align: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
+.video-background {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+     /* Ensures the video covers the entire background */
+}
+
+.container{
+    width: 23vw;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    text-align: justify;
+    margin-left: 60vw;
+    margin-top: 63vh; 
+    
+}
+#but11{
+    border-radius: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border: none;
+}
+
+#but11:hover{
+    opacity: 0.5;
+}
+.second_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    min-height: 50vh;
+    background-color: rgb(255, 255, 255);
+
+}
+.explore{
+ margin-top: 25vh;
+ background-color: aqua;
+ border: none;
+}
+
+.mens_collection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/images/a1.jpg");
+    background-size: cover; /* Ensures the image covers the div */
+    background-position: center;
+    border: 2 px solid black;
+    width: 40vh;
+    height: 40vh;
+    background-color: red;
+}
+.women_collection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/images/a14.jpg");
+    background-size: cover; /* Ensures the image covers the div */
+    background-position: center;
+    border: 2 px solid black;
+    width: 40vh;
+    height: 40vh;
+    background-color: green;
+}
+.sports_collection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/images/a10.jpg");
+    background-size: cover; /* Ensures the image covers the div */
+    background-position: center;
+    border: 2 px solid black;
+    width: 40vh;
+    height: 40vh;
+    background-color: yellow;
+}
+
+
+
+.third{
+    margin-left: 25%;
+    width: 50vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div3{
+    width: 7vw;
+    font-size: 20px;
+    padding: 0.8%;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.fourth{
+
+    padding: 1rem;
+    justify-items: left;
+    /* background-color: beige; */
+    width: 85vw;
+    height: 100vh;
+    border: 2 px solid red;
+}
+
+
+.items{
+    /* background-color: aqua; */
+    border: 1 px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.gridItems{
+    height: 100%;
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.card{
+
+    width: 100%;
+    height: 80%;
+    background-color: rebeccapurple;
+    background-size: cover;
+}
