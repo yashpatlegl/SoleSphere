@@ -1,0 +1,185 @@
+{
+    "shoes": [
+      {
+        "brand": "Nike",
+        "model": "Air Max 270",
+        "category": "Sports",
+        "price": 120,
+        "colors": ["Black", "White", "Blue"],
+        "sizes": [7, 8, 9, 10, 11],
+        "image_path": "images/nike_airmax270.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "RS-X3",
+        "category": "Casual",
+        "price": 110,
+        "colors": ["Red", "Green", "Black"],
+        "sizes": [6, 7, 8, 9, 10],
+        "image_path": "images/puma_rsx3.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "UltraBoost 21",
+        "category": "Running",
+        "price": 180,
+        "colors": ["White", "Grey", "Black"],
+        "sizes": [8, 9, 10, 11, 12],
+        "image_path": "images/adidas_ultraboost21.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "Cortez Classic",
+        "category": "Lifestyle",
+        "price": 90,
+        "colors": ["White", "Red", "Blue"],
+        "sizes": [5, 6, 7, 8],
+        "image_path": "images/nike_cortezclassic.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Future Rider",
+        "category": "Retro",
+        "price": 85,
+        "colors": ["Yellow", "Grey", "Black"],
+        "sizes": [6, 7, 8, 9],
+        "image_path": "images/puma_futurerider.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "Stan Smith",
+        "category": "Casual",
+        "price": 75,
+        "colors": ["Green", "White"],
+        "sizes": [7, 8, 9, 10],
+        "image_path": "images/adidas_stansmith.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "ZoomX Vaporfly",
+        "category": "Running",
+        "price": 250,
+        "colors": ["Blue", "Pink", "Black"],
+        "sizes": [8, 9, 10, 11],
+        "image_path": "images/nike_zoomxvaporfly.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Ignite Flash",
+        "category": "Training",
+        "price": 100,
+        "colors": ["Black", "Orange", "Grey"],
+        "sizes": [6, 7, 8, 9],
+        "image_path": "images/puma_igniteflash.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "Supernova",
+        "category": "Running",
+        "price": 130,
+        "colors": ["Red", "White", "Black"],
+        "sizes": [7, 8, 9, 10],
+        "image_path": "images/adidas_supernova.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "Blazer Mid '77",
+        "category": "Lifestyle",
+        "price": 100,
+        "colors": ["White", "Green", "Black"],
+        "sizes": [5, 6, 7, 8],
+        "image_path": "images/nike_blazermid77.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Suede Classic",
+        "category": "Retro",
+        "price": 70,
+        "colors": ["Blue", "Red", "Black"],
+        "sizes": [6, 7, 8, 9],
+        "image_path": "images/puma_suedeclassic.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "Forum Low",
+        "category": "Casual",
+        "price": 90,
+        "colors": ["White", "Yellow", "Black"],
+        "sizes": [8, 9, 10, 11],
+        "image_path": "images/adidas_forumlow.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "Pegasus Trail 3",
+        "category": "Trail Running",
+        "price": 140,
+        "colors": ["Grey", "Blue", "Orange"],
+        "sizes": [7, 8, 9, 10],
+        "image_path": "images/nike_pegasustrail3.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Rider FV",
+        "category": "Lifestyle",
+        "price": 95,
+        "colors": ["Green", "White", "Black"],
+        "sizes": [6, 7, 8, 9],
+        "image_path": "images/puma_riderfv.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "NMD_R1",
+        "category": "Casual",
+        "price": 140,
+        "colors": ["Black", "White", "Grey"],
+        "sizes": [8, 9, 10, 11],
+        "image_path": "images/adidas_nmdr1.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "React Infinity Run",
+        "category": "Running",
+        "price": 160,
+        "colors": ["Blue", "White", "Black"],
+        "sizes": [8, 9, 10, 11, 12],
+        "image_path": "images/nike_reactinfinityrun.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Carina 2.0",
+        "category": "Casual",
+        "price": 65,
+        "colors": ["White", "Pink", "Black"],
+        "sizes": [5, 6, 7, 8],
+        "image_path": "images/puma_carina2.jpg"
+      },
+      {
+        "brand": "Adidas",
+        "model": "Gazelle",
+        "category": "Retro",
+        "price": 80,
+        "colors": ["Blue", "Green", "White"],
+        "sizes": [6, 7, 8, 9],
+        "image_path": "images/adidas_gazelle.jpg"
+      },
+      {
+        "brand": "Nike",
+        "model": "Metcon 8",
+        "category": "Training",
+        "price": 150,
+        "colors": ["Black", "White", "Red"],
+        "sizes": [7, 8, 9, 10],
+        "image_path": "images/nike_metcon8.jpg"
+      },
+      {
+        "brand": "Puma",
+        "model": "Deviate Nitro",
+        "category": "Running",
+        "price": 160,
+        "colors": ["Orange", "Black", "White"],
+        "sizes": [8, 9, 10, 11],
+        "image_path": "images/puma_deviatenitro.jpg"
+      }
+    ]
+  }
+  
