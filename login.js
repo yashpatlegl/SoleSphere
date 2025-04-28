@@ -93,70 +93,63 @@ loginBtn.addEventListener('click', () => {
 });
 
 function updateNavbar() {
-    if (sessionStorage.getItem("userLoggedIn") === "true") {
-        let iconDiv = document.querySelector(".icon");
+    let iconDiv = document.querySelector(".icon");
+    event.preventDefault();
 
+    // Clear only user-related icons (wishlist, shopping bag, logout)
+    iconDiv.innerHTML = "";
+
+    // Always re-add Signup & Contact icons
+    let signupIcon = document.createElement("i");
+    signupIcon.className = "fa fa-sign-up";  // Make sure your actual class names match
+    signupIcon.style.fontSize = "24px";
+
+    let contactIcon = document.createElement("i");
+    contactIcon.className = "fa fa-contact"; // Ensure correct class names
+    contactIcon.style.fontSize = "24px";
+
+    iconDiv.appendChild(signupIcon);
+    iconDiv.appendChild(contactIcon);
+
+    if (sessionStorage.getItem("userLoggedIn") === "true") {
+        event.preventDefault();
+        // Create wishlist icon
         let wishlistIcon = document.createElement("i");
         wishlistIcon.className = "fa fa-heart";
         wishlistIcon.style.fontSize = "24px";
 
+        // Create shopping bag icon
         let shoppingBagIcon = document.createElement("i");
         shoppingBagIcon.className = "fa fa-shopping-bag";
         shoppingBagIcon.style.fontSize = "24px";
 
+        // Create logout button
+        let logoutButton = document.createElement("button");
+        logoutButton.setAttribute("id", "ayushi");
+        logoutButton.textContent = "Logout";
+        logoutButton.style.marginLeft = "10px";
+        logoutButton.style.padding = "5px 10px";
+        logoutButton.style.border = "none";
+        logoutButton.style.backgroundColor = "red";
+        logoutButton.style.color = "white";
+        logoutButton.style.cursor = "pointer";
+
+        // Append user-related icons
         iconDiv.appendChild(wishlistIcon);
         iconDiv.appendChild(shoppingBagIcon);
+        iconDiv.appendChild(logoutButton);
+
+        // Logout functionality
+        logoutButton.addEventListener("click", function() {
+            sessionStorage.removeItem("userLoggedIn");
+            updateNavbar(); // Refresh navbar
+        });
+        event.preventDefault();
     }
 }
 
-// Call this function when the page loads
 window.onload = updateNavbar;
 
 
-// // Fetch accounts data
-// let accounts = [];
-// fetch('accounts.json')
-//     .then(response => response.json())
-//     .then(data => {
-//         accounts = data;
-//     });
 
-// // Event listener for Register button
-// registerBtn.addEventListener('click', () => {
-//     const username = document.getElementById('username').value;
-//     const password = document.getElementById('password').value;
 
-//     if (username && password) {
-//         const userExists = accounts.some(account => account.username === username);
-
-//         if (!userExists) {
-//             accounts.push({ username, password });
-//             console.log('User registered successfully:', { username, password });
-//             // Save updated accounts to accounts.json (requires backend)
-//             // This is a front-end simulation
-//         } else {
-//             console.log('User already exists!');
-//         }
-//     } else {
-//         console.log('Please fill in both username and password.');
-//     }
-
-//     container.classList.add("active");
-// });
-
-// // Event listener for Login button
-// loginBtn.addEventListener('click', () => {
-//     const username = document.getElementById('username').value;
-//     const password = document.getElementById('password').value;
-
-//     const user = accounts.find(account => account.username === username && account.password === password);
-
-//     if (user) {
-//         console.log('Login successful:', { username });
-//         // Redirect to another page or perform actions on successful login
-//     } else {
-//         console.log('Invalid username or password.');
-//     }
-
-//     container.classList.remove("active");
-// });
