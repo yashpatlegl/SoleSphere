@@ -71,15 +71,6 @@
           "colors": ["Black", "Orange", "Grey"],
           "sizes": [6, 7, 8, 9],
           "image_path": "a8.jpg"
-      },
-      {
-          "brand": "Adidas",
-          "model": "Supernova",
-          "category": "Running",
-          "price": 130,
-          "colors": ["Red", "White", "Black"],
-          "sizes": [7, 8, 9, 10],
-          "image_path": "w2.jpg"
       }
   ]
 }
