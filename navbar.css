@@ -12,6 +12,7 @@
     align-items: center;
     padding: 0.1vw 1vh;
     position: fixed;
+    z-index: 90;
     background-color: white;
     /* border: 2px solid black; */
     /* position: fixed;  */
