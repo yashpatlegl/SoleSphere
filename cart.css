@@ -70,76 +70,19 @@ ul{
     justify-content: space-evenly;
     gap: 2rem;
 }
-.box{
-    /* padding-left: 2rem; */
-    padding-left: 1rem;
-    padding-right: 1rem;
+.cart{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
-    width: 80vw;
-    height: 45vh;
-    border: 1px solid black;
+    justify-content: left;
+    padding-left: 5rem;
+    margin: 2rem;
+    width: 100vw;
+    height: 10vh;
+    box-sizing: border-box;
+}
+
+
+.collections{
+    display: flex;
     
 }
-
-.photo{
-    /* padding-left: 2rem; */
-    /* margin: 2rem; */
-    width: 15rem;
-    height: 15rem;
-    background-image: url('/images/w8.avif');
-    background-size: cover;
-}
-.information{
-    width: 60%;
-    height: 15rem;
-    /* border: 2px solid bisque; */
-    padding: 0.9rem;
-
-    /* margin: 0.5rem; */
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
-    justify-content: left;
-    align-items:start;
-}
-
-/* .wishlistbutt{
-    width: 100%;
-    height: 35%;
-    background-color: aqua;
-} */
-/* <!-- HTML !-->
-<button class="button-43" role="button">Button 43</button> */
-
-/* CSS */
-.button-43 {
-  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
-  border-radius: .5rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  padding: 1rem 1.75rem;
-  text-decoration: none;
-  width: 100%;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-43:hover {
-  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
-}
-
-@media (min-width: 768px) {
-  .button-43 {
-    padding: 1rem 2rem;
-  }
-}
-

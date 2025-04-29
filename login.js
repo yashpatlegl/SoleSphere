@@ -76,6 +76,7 @@ loginBtn.addEventListener('click', () => {
     const user = accounts.find(account => account.email === email && account.password === password);
 
     if (user) {
+        sessionStorage.setItem("email", email);
         sessionStorage.setItem("userLoggedIn", "true");
         updateNavbar();
         console.log(`Login successful: Welcome, ${user.username}!`);
