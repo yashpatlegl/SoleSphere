@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
           shoeDiv.innerHTML = `
               <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
               <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-              <br> <button><i class="fa fa-heart"></i></button></p>
+              <br> <button style="background-color: #DFD0B8; border:none; border-radius:5rem;  padding:0.5rem">ADD TO WISHLIST<i class="fa fa-heart"></i></button></p>
           `;
           shoeContainer.appendChild(shoeDiv);
       });
