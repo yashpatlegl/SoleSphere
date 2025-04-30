@@ -18,26 +18,69 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(error => console.error("Error fetching shoe data:", error));
 
-  // Function to display shoes dynamically
-  function displayShoes(shoes) {
-      shoeContainer.innerHTML = "";
-      shoes.forEach(shoe => {
-          const shoeDiv = document.createElement("div");
-          shoeDiv.style.display = "flex";
-          shoeDiv.style.flexDirection="column";
-          shoeDiv.style.textAlign="center";
 
 
-          shoeDiv.classList.add("items");
-          shoeDiv.innerHTML = `
-              <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
-              <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-              <br> <button style="background-color: #DFD0B8; border:none; border-radius:5rem;  padding:0.5rem">ADD TO WISHLIST<i class="fa fa-heart"></i></button></p>
-          `;
-          shoeContainer.appendChild(shoeDiv);
+      
+function displayShoes(shoes) {
+  shoeContainer.innerHTML = "";
+  shoes.forEach(shoe => {
+      const shoeDiv = document.createElement("div");
+      shoeDiv.style.display = "flex";
+      shoeDiv.style.flexDirection = "column";
+      shoeDiv.style.textAlign = "center";
+
+      shoeDiv.classList.add("items");
+      shoeDiv.innerHTML = `
+          <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
+          <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+          <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; border-radius:5rem; padding:0.5rem">
+              ADD TO WISHLIST <i class="fa fa-heart"></i>
+          </button></p>
+      `;
+
+      shoeContainer.appendChild(shoeDiv);
+  });
+
+  // Add event listeners to all wishlist buttons
+  document.querySelectorAll(".wishlist-btn").forEach(button => {
+      button.addEventListener("click", function() {
+          const model = this.getAttribute("data-model");
+          addToWishlist(model);
       });
-  }
-});
+  });
+}
+
+
+    });
+
+//   // Function to display shoes dynamically
+//   function displayShoes(shoes) {
+//       shoeContainer.innerHTML = "";
+//       shoes.forEach(shoe => {
+//           const shoeDiv = document.createElement("div");
+//           shoeDiv.style.display = "flex";
+//           shoeDiv.style.flexDirection="column";
+//           shoeDiv.style.textAlign="center";
+
+
+//           shoeDiv.classList.add("items");
+//           shoeDiv.innerHTML = `
+//               <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
+//               <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+//               <br> <button  style="background-color: #DFD0B8; border:none; border-radius:5rem;  padding:0.5rem">ADD TO WISHLIST<i class="fa fa-heart"></i></button></p>
+//           `;
+//           shoeContainer.appendChild(shoeDiv);
+//       });
+//   }
+// });
+
+
+
+
+
+
+
+
 
 // Navbar update function for user login/logout
 function updateNavbar() {
@@ -85,6 +128,31 @@ function updateNavbar() {
       });
     }
   }
+
+
+  
+   function addToWishlist(model) {
+    event.preventDefault();
+
+    const email = sessionStorage.getItem('email');
+    
+
+    if (!email || !model) {
+        alert("Both email and model fields are required.");
+        return;
+    }
+
+    const response =  fetch("http://localhost:3000/add-to-wishlist", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, model })
+    });
+
+    const data =  response.json();
+    alert(data.message);
+  }
   
   // Initialize navbar on page load
-  window.onload = updateNavbar;
+window.onload = updateNavbar;

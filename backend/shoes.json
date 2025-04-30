@@ -1,0 +1,76 @@
+{
+  "shoes": [
+      {
+          "brand": "Nike",
+          "model": "Air Max 270",
+          "category": "Sports",
+          "price": 120,
+          "colors": ["Black", "White", "Blue"],
+          "sizes": [7, 8, 9, 10, 11],
+          "image_path": "a1.jpg"
+      },
+      {
+          "brand": "Puma",
+          "model": "RS-X3",
+          "category": "Casual",
+          "price": 110,
+          "colors": ["Red", "Green", "Black"],
+          "sizes": [6, 7, 8, 9, 10],
+          "image_path": "a2.jpeg"
+      },
+      {
+          "brand": "Adidas",
+          "model": "UltraBoost 21",
+          "category": "Running",
+          "price": 180,
+          "colors": ["White", "Grey", "Black"],
+          "sizes": [8, 9, 10, 11, 12],
+          "image_path": "a3.jpg"
+      },
+      {
+          "brand": "Nike",
+          "model": "Cortez Classic",
+          "category": "Lifestyle",
+          "price": 90,
+          "colors": ["White", "Red", "Blue"],
+          "sizes": [5, 6, 7, 8],
+          "image_path": "a4.jpeg"
+      },
+      {
+          "brand": "Puma",
+          "model": "Future Rider",
+          "category": "Retro",
+          "price": 85,
+          "colors": ["Yellow", "Grey", "Black"],
+          "sizes": [6, 7, 8, 9],
+          "image_path": "a5.avif"
+      },
+      {
+          "brand": "Adidas",
+          "model": "Stan Smith",
+          "category": "Casual",
+          "price": 75,
+          "colors": ["Green", "White"],
+          "sizes": [7, 8, 9, 10],
+          "image_path": "a6.jpeg"
+      },
+      {
+          "brand": "Nike",
+          "model": "ZoomX Vaporfly",
+          "category": "Running",
+          "price": 250,
+          "colors": ["Blue", "Pink", "Black"],
+          "sizes": [8, 9, 10, 11],
+          "image_path": "a7.jpg"
+      },
+      {
+          "brand": "Puma",
+          "model": "Ignite Flash",
+          "category": "Training",
+          "price": 100,
+          "colors": ["Black", "Orange", "Grey"],
+          "sizes": [6, 7, 8, 9],
+          "image_path": "a8.jpg"
+      }
+  ]
+}
