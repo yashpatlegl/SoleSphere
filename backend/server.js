@@ -137,8 +137,15 @@ app.get('/wishlist/:email', (req, res) => {
         
         return res.status(404).json({ message: "No wishlist found for this email." });
     }
-
-    res.json({ wishlist: wishlist[email] });
+    const array_wish=wishlist[email];
+    const res_json ={};
+    array_wish.forEach(element => {
+        res_json[element] = shoesData.shoes[element];
+    });
+    console.log(res_json);
+    res.json(res_json);
+    
+    // res.json({ wishlist: wishlist[email] });
 });
 
 // Start server
