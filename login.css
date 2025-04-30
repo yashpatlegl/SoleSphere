@@ -242,3 +242,11 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+.icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon i:hover {
+    transform: scale(1.4);
+}

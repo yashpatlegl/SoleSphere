@@ -21,34 +21,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
       
+// function displayShoes(shoes) {
+//   shoeContainer.innerHTML = "";
+//   shoeContainer.style.gap ="1rem";
+//   shoes.forEach(shoe => {
+//       const shoeDiv = document.createElement("div");
+//       shoeDiv.style.display = "flex";
+//       shoeDiv.style.flexDirection = "column";
+//       shoeDiv.style.textAlign = "center";
+//       shoeDiv.style.backgroundColor="#F1F0E8"
+//       shoeDiv.style.borderRadius="2rem";
+//       shoeDiv.style.transition="transform 0.3s ease-in-out";
+//       shoeDiv.addEventListener("mouseover", ()=>
+//     {
+//         shoeDiv.style.transform="scale(1.1)"
+//     });
+//     shoeDiv.addEventListener("mouseout", ()=>
+//     {
+//         shoeDiv.style.transform="scale(1)"
+//     });
+
+//       shoeDiv.classList.add("items");
+//       shoeDiv.innerHTML = `
+//           <div class="card" style="border-radius:2rem; object-fit: cover; background-size: cover; background-image: url('images/${shoe.image_path}'); "></div>
+//           <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+//           <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none;  padding:0.5rem">
+//               ADD TO WISHLIST <i class="fa fa-heart"></i>
+//           </button></p>
+//       `;
+
+//       shoeContainer.appendChild(shoeDiv);
+//   });
+
+//   // Add event listeners to all wishlist buttons
+//   document.querySelectorAll(".wishlist-btn").forEach(button => {
+//       button.addEventListener("click", function() {
+//           const model = this.getAttribute("data-model");
+//           addToWishlist(model);
+//       });
+//   });
+// }
 function displayShoes(shoes) {
-  shoeContainer.innerHTML = "";
-  shoes.forEach(shoe => {
-      const shoeDiv = document.createElement("div");
-      shoeDiv.style.display = "flex";
-      shoeDiv.style.flexDirection = "column";
-      shoeDiv.style.textAlign = "center";
+    shoeContainer.innerHTML = "";
+    shoeContainer.style.gap = "1rem";
+  
+    shoes.forEach(shoe => {
+        const shoeDiv = document.createElement("div");
+        shoeDiv.style.display = "flex";
+        shoeDiv.style.flexDirection = "column";
+        shoeDiv.style.alignItems = "center";
+        shoeDiv.style.justifyContent="space-around";
+        shoeDiv.style.textAlign = "center";
+        shoeDiv.style.height="60%"
+        // shoeDiv.style.backgroundColor = "#F1F0E8";
+        shoeDiv.style.borderRadius = "2rem";
+        shoeDiv.style.transition = "transform 0.3s ease-in-out";
+        shoeDiv.style.position = "relative"; 
+  
+        // Hover Effect - Scale on Hover
+        shoeDiv.addEventListener("mouseover", () => {
+            shoeDiv.style.transform = "scale(1.1)";
+            shoeText.style.display = "block"; // Show text on hover
+            shoeDiv.style.backgroundColor = "#F1F0E8"
+        });
+        shoeDiv.addEventListener("mouseout", () => {
+            shoeDiv.style.transform = "scale(1)";
+            shoeText.style.display = "none"; // Hide text when not hovering
+            shoeDiv.style.backgroundColor="white";
+        });
+  
+        shoeDiv.classList.add("items");
+  
+        // Shoe Image
+        const shoeImage = document.createElement("div");
+        shoeImage.classList.add("card");
+        shoeImage.style.borderRadius = "2rem";
+        shoeImage.style.objectFit = "cover";
+        shoeImage.style.backgroundSize = "cover";
+        shoeImage.style.backgroundImage = `url('images/${shoe.image_path}')`;
+        shoeImage.style.width = "100%";
+        shoeImage.style.height = "20rem";
+        shoeImage.style.alignSelf="start"
+  
+        // Shoe Text Content (Initially Hidden)
+        const shoeText = document.createElement("p");
+        shoeText.innerHTML = `<strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+            <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; padding:0.5rem">
+                ADD TO WISHLIST <i class="fa fa-heart"></i>
+            </button>`;
+        shoeText.style.display = "none"; // Hide by default
+  
+        // Append elements
+        shoeDiv.appendChild(shoeImage);
+        shoeDiv.appendChild(shoeText);
+        shoeContainer.appendChild(shoeDiv);
+    });
+  
+    // Wishlist button functionality
+    document.querySelectorAll(".wishlist-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            const model = this.getAttribute("data-model");
+            addToWishlist(model);
+        });
+    });
+  }
+  
 
-      shoeDiv.classList.add("items");
-      shoeDiv.innerHTML = `
-          <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
-          <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-          <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; border-radius:5rem; padding:0.5rem">
-              ADD TO WISHLIST <i class="fa fa-heart"></i>
-          </button></p>
-      `;
 
-      shoeContainer.appendChild(shoeDiv);
-  });
-
-  // Add event listeners to all wishlist buttons
-  document.querySelectorAll(".wishlist-btn").forEach(button => {
-      button.addEventListener("click", function() {
-          const model = this.getAttribute("data-model");
-          addToWishlist(model);
-      });
-  });
-}
 
 
     });
