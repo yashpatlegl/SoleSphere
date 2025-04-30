@@ -23,10 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
       shoeContainer.innerHTML = "";
       shoes.forEach(shoe => {
           const shoeDiv = document.createElement("div");
+          shoeDiv.style.display = "flex";
+          shoeDiv.style.flexDirection="column";
+          shoeDiv.style.textAlign="center";
+
+
           shoeDiv.classList.add("items");
           shoeDiv.innerHTML = `
               <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
-              <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price}</p>
+              <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+              <br> <button><i class="fa fa-heart"></i></button></p>
           `;
           shoeContainer.appendChild(shoeDiv);
       });
@@ -35,19 +41,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Navbar update function for user login/logout
 function updateNavbar() {
-  let iconDiv = document.querySelector(".icon");
+    let iconDiv = document.querySelector(".icon");
+    
+    // Check user login status
+    if (sessionStorage.getItem("userLoggedIn") === "true") {
+      // Create wishlist icon
+      let wishlink = document.createElement("a");
+      wishlink.href = "wishlist.html";
 
-  if (sessionStorage.getItem("userLoggedIn") === "true") {
       let wishlistIcon = document.createElement("i");
       wishlistIcon.className = "fa fa-heart";
       wishlistIcon.style.fontSize = "24px";
-
+      wishlink.appendChild(wishlistIcon);
+  
+      // Create shopping bag icon
       let shoppingBagIcon = document.createElement("i");
       shoppingBagIcon.className = "fa fa-shopping-bag";
       shoppingBagIcon.style.fontSize = "24px";
-
+  
+      // Create logout button
       let logoutButton = document.createElement("button");
-      logoutButton.setAttribute("id", "logout-button");
+      logoutButton.setAttribute("id", "ayushi");
       logoutButton.textContent = "Logout";
       logoutButton.style.marginLeft = "10px";
       logoutButton.style.padding = "5px 10px";
@@ -55,16 +69,22 @@ function updateNavbar() {
       logoutButton.style.backgroundColor = "red";
       logoutButton.style.color = "white";
       logoutButton.style.cursor = "pointer";
-
-      iconDiv.appendChild(wishlistIcon);
+  
+      // Append user-related icons
+      iconDiv.appendChild(wishlink);
       iconDiv.appendChild(shoppingBagIcon);
       iconDiv.appendChild(logoutButton);
-
-      logoutButton.addEventListener("click", function () {
-          sessionStorage.removeItem("userLoggedIn");
-          location.reload();
+  
+      // Add event listener to logout button
+      logoutButton.addEventListener("click", function() {
+        // Remove wishlist and shopping bag icons
+        if (wishlistIcon && shoppingBagIcon) {
+          iconDiv.removeChild(wishlistIcon);
+          iconDiv.removeChild(shoppingBagIcon);
+        }
       });
+    }
   }
-}
-
-window.onload = updateNavbar;
+  
+  // Initialize navbar on page load
+  window.onload = updateNavbar;

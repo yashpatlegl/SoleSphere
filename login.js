@@ -102,9 +102,13 @@ function updateNavbar() {
     // Check user login status
     if (sessionStorage.getItem("userLoggedIn") === "true") {
       // Create wishlist icon
+      let wishlink = document.createElement("a");
+      wishlink.href = "wishlist.html";
+
       let wishlistIcon = document.createElement("i");
       wishlistIcon.className = "fa fa-heart";
       wishlistIcon.style.fontSize = "24px";
+      wishlink.appendChild(wishlistIcon);
   
       // Create shopping bag icon
       let shoppingBagIcon = document.createElement("i");
@@ -123,7 +127,7 @@ function updateNavbar() {
       logoutButton.style.cursor = "pointer";
   
       // Append user-related icons
-      iconDiv.appendChild(wishlistIcon);
+      iconDiv.appendChild(wishlink);
       iconDiv.appendChild(shoppingBagIcon);
       iconDiv.appendChild(logoutButton);
   
