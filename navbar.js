@@ -70,9 +70,9 @@ function displayShoes(shoes) {
         shoeDiv.style.display = "flex";
         shoeDiv.style.flexDirection = "column";
         shoeDiv.style.alignItems = "center";
-        shoeDiv.style.justifyContent="space-around";
+        shoeDiv.style.justifyContent="center";
         shoeDiv.style.textAlign = "center";
-        shoeDiv.style.height="60%"
+        shoeDiv.style.height="80%"
         // shoeDiv.style.backgroundColor = "#F1F0E8";
         shoeDiv.style.borderRadius = "2rem";
         shoeDiv.style.transition = "transform 0.3s ease-in-out";
@@ -100,7 +100,7 @@ function displayShoes(shoes) {
         shoeImage.style.backgroundSize = "cover";
         shoeImage.style.backgroundImage = `url('images/${shoe.image_path}')`;
         shoeImage.style.width = "100%";
-        shoeImage.style.height = "20rem";
+        shoeImage.style.height = "100%";
         shoeImage.style.alignSelf="start"
   
         // Shoe Text Content (Initially Hidden)
