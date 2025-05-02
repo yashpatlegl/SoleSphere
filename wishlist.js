@@ -1,7 +1,7 @@
 function addToCart(model) {
 
-  console.log(`Adding ${model} ($${price}) to cart...`);
-  alert(`${model} added to cart!`);
+  console.log(`Adding ${model}  to cart...`);
+//   alert(`${model} added to cart!`);
   event.preventDefault();
 
   const email = sessionStorage.getItem("email");
@@ -9,7 +9,7 @@ function addToCart(model) {
     alert("Both email and model fields are required.");
     return;
   }
-  alert("Item Added to Cart!!");
+//   alert("Item Added to Cart!!");
 
   const response = fetch("http://localhost:3000/add-to-cart", {
     method: "POST",
@@ -21,6 +21,7 @@ function addToCart(model) {
 
   const data = response.json();
   alert(data.message);
+  
 }
 
 
@@ -66,7 +67,7 @@ function fetchWishlist() {
           itemElement.innerHTML = `
                         <p style="font-size:1.5rem"><strong>${details.model}</strong></p>
                         <p style="font-size:1.5rem"><strong>Price: $${details.price}<strong></p><div style="object-fit: cover; heigth: 2rem" >
-                        <button style="align-self: flex-end;" class="button-43">ADD TO CART</button>
+                        <button style="align-self: flex-end;" class="button-43" onclick=addToCart("${details.model}")>ADD TO CART</button>
                     `;
           boxiteam.appendChild(photoitem);
           boxiteam.appendChild(itemElement);
@@ -84,12 +85,12 @@ function fetchWishlist() {
         "<p>Something went wrong. Please try again later.</p>";
     });
 
-  document.querySelectorAll(".button-43").forEach((button) => {
-    button.addEventListener("click", function () {
-      const model = this.getAttribute("data-model");
-      addToCart(model);
-    });
-  });
+//   document.querySelectorAll(".button-43").forEach((button) => {
+//     button.addEventListener("click", function () {
+//       const model = details.model;
+//       addToCart(model);
+//     });
+//   });
 }
 
 // Example function to handle adding to cart
