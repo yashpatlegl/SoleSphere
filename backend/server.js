@@ -204,6 +204,9 @@ app.get('/cart/:email', (req, res) => {
 
     const cartItems = cart[email].map(index => shoesData.shoes[index]);
     const totalBill = cartItems.reduce((sum, item) => sum + item.price, 0);
+    // const totalBill=[];
+    // cartItems.forEach((ele) => {totalBill.push(ele)});  
+
     
     // console.log ({ cartItems, totalBill });
     res.json({ cartItems, totalBill });

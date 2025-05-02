@@ -1,3 +1,5 @@
+
+
 // function fetchCartItem(){
 //     const email = sessionStorage.getItem('email');
 //     const wishlistContainer = document.getElementById('collectionbox');
@@ -61,7 +63,7 @@ function fetchCartItem() {
     const email = sessionStorage.getItem('email');
     const wishlistContainer = document.getElementById('collectionbox');
     const cart_count = document.getElementById('cartCount')
-
+    // let allshoes=[];
     if (!wishlistContainer) {
         console.error('Cart container not found in the DOM.');
         return;
@@ -71,6 +73,8 @@ function fetchCartItem() {
         alert('Please enter a valid email!');
         return;
     }
+    // const shoesData = require('./shoes.json');
+    // console.log(shoesData)
 
     fetch(`http://localhost:3000/cart/${email}`)
     .then(response => response.json())
@@ -91,12 +95,35 @@ function fetchCartItem() {
                     photoItem.style.height = "15em";
                     photoItem.style.backgroundImage = `url('images/${details.image_path}')`;
                     photoItem.style.backgroundSize = "cover";
-    
+                    // function findElementIndex(jsonData, searchKey, searchValue) {
+                    //     return jsonData.shoes.findIndex(shoe => shoe[searchKey] === searchValue);
+                    // }
                     const itemElement = document.createElement('div');
                     itemElement.className = 'information';
+                    // let shoes_div_id="quatity_"+findElementIndex(shoesData, "model",details.model);
+                    // console.log(shoes_div_id);
+                    // allshoes.push(shoes_div_id);
+                    // itemElement.id=shoes_div_id;
+
                     itemElement.innerHTML = `
-                        <p style="font-size:1rem"><strong>${details.model}</strong></p>
+                        <p style="font-size:1rem"><strong><p>Product Model : ${details.model}</strong></p>
+                         <p style="font-size:1rem"><strong><p>Size : </strong><select>
+                         <option>Pink</option>
+                         <option>Blue</option>
+                         <option>Orange</option>
+                         <option>Red</option>
+                         </select></p>
+                         <p style="font-size:1rem"><strong><p>Color : </strong></p>
+                         <div><p><strong class="quantity" >Select Quantity : <strong><select>
+                         <option>1</option>
+                         <option>2</option>
+                         <option>3</option>
+                         <option>4</option>
+                         </select>
+                         </p>
+                         </div>
                         <p style="font-size:1rem"><strong>Price: $${details.price}</strong></p>
+            
                     `;
     
                     // ADD TO CART BUTTON

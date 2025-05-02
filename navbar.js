@@ -105,18 +105,23 @@ function displayShoes(shoes) {
         shoeImage.style.height = "100%";
         shoeImage.style.alignSelf="start";
 
+        // const showbrand = document.createElement("h3");
+        // showbrand.innerHTML=`<strong>${shoe.brand}</strong>`;
+
   
-        // Shoe Text Content (Initially Hidden)
         const shoeText = document.createElement("p");
         shoeText.innerHTML = `<strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
             <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; padding:0.5rem">
                 ADD TO WISHLIST <i class="fa fa-heart"></i>
-            </button>`;
+            </button>
+            
+            `;
         shoeText.style.display = "none"; // Hide by default
   
         // Append elements
         shoeDiv.appendChild(shoeImage);
         shoeDiv.appendChild(shoeText);
+        // shoeDiv.appendChild(showbrand);
         shoeContainer.appendChild(shoeDiv);
     });
   
