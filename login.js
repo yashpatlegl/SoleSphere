@@ -1,4 +1,3 @@
-// const { log } = require("console");
 
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');
@@ -108,39 +107,46 @@ function updateNavbar() {
       wishlink.appendChild(wishlistIcon);
   
       // Create shopping bag icon
+
+      let bagIcon = document.createElement("a");
+      bagIcon.href="cart.html";
+
       let shoppingBagIcon = document.createElement("i");
       shoppingBagIcon.className = "fa fa-shopping-bag";
       shoppingBagIcon.style.fontSize = "24px";
+      bagIcon.appendChild(shoppingBagIcon)
   
       // Create logout button
       let logoutButton = document.createElement("button");
       logoutButton.setAttribute("id", "ayushi");
       logoutButton.textContent = "Logout";
       logoutButton.style.marginLeft = "10px";
-      logoutButton.style.padding = "5px 10px";
+      logoutButton.style.padding = "0.5rem";
+      logoutButton.style.borderRadius="1.5rem"
       logoutButton.style.border = "none";
-      logoutButton.style.backgroundColor = "red";
+      logoutButton.style.backgroundColor="black"
       logoutButton.style.color = "white";
       logoutButton.style.cursor = "pointer";
   
       // Append user-related icons
       iconDiv.appendChild(wishlink);
-      iconDiv.appendChild(shoppingBagIcon);
+      iconDiv.appendChild(bagIcon);
       iconDiv.appendChild(logoutButton);
   
       // Add event listener to logout button
       logoutButton.addEventListener("click", function() {
         // Remove wishlist and shopping bag icons
-        if (wishlistIcon && shoppingBagIcon) {
-          iconDiv.removeChild(wishlistIcon);
-          iconDiv.removeChild(shoppingBagIcon);
+        if (wishlink && bagIcon) {
+          iconDiv.removeChild(wishlink);
+          iconDiv.removeChild(bagIcon);
+          iconDiv.removeChild(logoutButton);
+          sessionStorage.clear();
         }
       });
     }
   }
   
-  // Initialize navbar on page load
-//   window.onload = updateNavbar;
+
   
 
 

@@ -60,18 +60,21 @@ function fetchWishlist() {
           <p style="font-size:1.5rem class="model-name"><strong style="font-size:1.5rem">Brand: ${
             details.brand
           }</strong></p>
-                        <p style="font-size:1.5rem class="model-name"><strong style="font-size:1.5rem">Model :${
+
+          <p style="font-size:1.5rem class="model-name"><strong style="font-size:1.5rem">Model :${
                           details.model
-                        }</strong></p>
+          }</strong></p>
                         <p style="font-size:1.5rem"><strong>Price: $${
                           details.price
                         }<strong></p><div style="object-fit: cover; heigth: 2rem" >
-                       <div class="cartdelete"><button 
+          <div class="cartdelete">
+          <button 
     style="align-self: flex-end; " 
     class="button-43" 
     onclick="addToCart('${details.model.replace(/'/g, `\\'`)}')">
     ADD TO CART
-</button><button class="trash"><i class="fa fa-trash" aria-hidden="true" style="font-size:1.5rem"></i></button></div>
+</button>
+<button class="trash"><i class="fa fa-trash" aria-hidden="true" style="font-size:1.5rem" onclick="removewishlist('${email}','${details.model}')"></i></button></div>
 `;
 
           boxiteam.appendChild(photoitem);
@@ -83,27 +86,61 @@ function fetchWishlist() {
         wishlistContainer.innerHTML =
           "<p>No wishlist found for this email.</p>";
       }
-      //   document.querySelectorAll(".button-43").forEach((button) => {
-      //     button.addEventListener("click", function () {
-      //       const model = this.getElementByClass("model-name");
-      //       addToCart(model);
-      //     });
+      // document.querySelectorAll(".button-43").forEach((button) => {
+      //   button.addEventListener("click", function () {
+      //     const model = this.getElementByClass("model-name");
+      //     addToCart(model);
       //   });
-
-      document.querySelectorAll(".trash").forEach((button) => {
-             button.addEventListener("click", function () {
-               let itemToRemove = this.closest(".box");
-               if(itemToRemove){
-                itemToRemove.remove()
-               }
-             });
-           });
+      // });
     })
     .catch((error) => {
       console.error("Error fetching wishlist:", error);
       wishlistContainer.innerHTML =
         "<p>Something went wrong. Please try again later.</p>";
     });
+
+  // document.getElementsByClassName("astrash").forEach((button) => {
+  //   button.addEventListener("click", function () {
+      
+  //   });
+  // });
+}
+
+function removewishlist(email,model){
+  // let itemToRemove = this.closest(".box");
+    
+      // const email = this.email;
+    console.log(model);
+      if (!email || !model) {
+        alert("Invalid session or item.");
+        return;
+      }
+
+      console.log(
+        `Sending DELETE request for model: ${model}, email: ${email}`
+      );
+
+      fetch("http://localhost:3000/remove-from-wishlist", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, model }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Server response:", data);
+          if (data.success) {
+            // itemToRemove.remove(); // Remove item from UI
+            alert("Item successfully removed from wishlist!");
+          } else {
+            alert("Failed to remove item.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error removing item:", error);
+          alert("An error occurred. Please try again.");
+        });
 }
 
 // Example function to handle adding to cart

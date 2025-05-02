@@ -238,6 +238,54 @@ console.log("asd");
 
 
 
+const readWishlist = () => {
+    try {
+        const data = fs.readFileSync(wishlistFile, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error reading wishlist:", error);
+        return {};
+    }
+};
+
+// Function to write updated wishlist data
+const writeWishlist = (data) => {
+    try {
+        fs.writeFileSync(wishlistFile, JSON.stringify(data, null, 2), "utf-8");
+    } catch (error) {
+        console.error("Error writing wishlist:", error);
+    }
+};
+
+app.delete("/remove-from-wishlist", (req, res) => {
+    const { email, model } = req.body;
+
+    if (!email || !model) {
+        return res.status(400).json({ success: false, message: "Email and model are required." });
+    }
+
+    let wishlist = readWishlist();
+
+    if (!wishlist[email]) {
+        return res.status(404).json({ success: false, message: "No wishlist found for this email." });
+    }
+
+    // Find the index of the model from shoes.json
+    const shoeIndex = shoesData.shoes.findIndex(shoe => shoe.model === model);
+
+    if (shoeIndex === -1 || !wishlist[email].includes(shoeIndex)) {
+        return res.status(404).json({ success: false, message: "Item not found in wishlist." });
+    }
+
+    // Remove the index from the wishlist
+    wishlist[email] = wishlist[email].filter(index => index !== shoeIndex);
+
+    // Save updated wishlist
+    writeWishlist(wishlist);
+
+    res.json({ success: true, message: `${model} removed from wishlist.` });
+});
+
 
 
 // Start server

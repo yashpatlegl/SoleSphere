@@ -55,22 +55,36 @@ h1{
     
 }
 #but11{
-    padding-left: 5%;
-    padding-right: 5%;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 20rem;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  padding: 0.2rem;
+  margin: 2rem;
+text-decoration: none;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: transform 0.3s ease-in-out;
 }
+
 
 #but11:hover{
     opacity: 0.5;
+    padding: 1rem;
 }
 .second_div{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
+    width: 80vw;
     min-height: 50vh;
     background-color: rgb(255, 255, 255);
 
@@ -83,6 +97,7 @@ h1{
 }
 
 .mens_collection{
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,11 +105,12 @@ h1{
     background-size: cover; /* Ensures the image covers the div */
     background-position: center;
     border: 2 px solid black;
-    width: 40vh;
-    height: 40vh;
+    width: 25%;
+    height: 40%;
     background-color: red;
 }
 .women_collection{
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,11 +118,12 @@ h1{
     background-size: cover; /* Ensures the image covers the div */
     background-position: center;
     border: 2 px solid black;
-    width: 40vh;
-    height: 40vh;
+    width: 25%;
+    height: 40%;
     background-color: green;
 }
 .sports_collection{
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,15 +131,15 @@ h1{
     background-size: cover; /* Ensures the image covers the div */
     background-position: center;
     border: 2 px solid black;
-    width: 40vh;
-    height: 40vh;
+    width: 25%;
+    height: 40%;
     background-color: yellow;
 }
 
 
 
 .third{
-    margin-left: 25%;
+    margin-left: 20%;
     width: 50vw;
     height: 10vh;
     display: flex;
@@ -142,11 +159,37 @@ h1{
     padding: 1rem;
     justify-items: left;
     /* background-color: beige; */
-    width: 85vw;
+    width: 90vw;
     height: 100vh;
     border: 2 px solid red;
 }
 
+.explore{
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  padding: 0.4rem;
+  /* padding: 1rem 1.75rem; */
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: transform 0.3s ease-in-out;
+}
+
+.explore:hover{
+    transform: scale(1.2);
+}
+a{
+    text-decoration: none;
+}
 
 .items{
     /* background-color: aqua; */
