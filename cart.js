@@ -110,6 +110,8 @@ function fetchCartItem() {
   const email = sessionStorage.getItem("email");
   const wishlistContainer = document.getElementById("collectionbox");
   const bill1 = document.getElementById("bill");
+  let count = document.getElementById("cartCount");
+
 
   if (!wishlistContainer) {
     console.error("Cart container not found in the DOM.");
@@ -125,6 +127,7 @@ function fetchCartItem() {
     .then((response) => response.json())
     .then((data) => {
       console.log("Cart Data:", data);
+      count.innerHTML=`TOTAL ITEMS: ${Object.keys(data.cartItems).length}`;
 
       wishlistContainer.innerHTML = "";
       let totalBill = 0; // Initialize total bill
@@ -157,12 +160,13 @@ function fetchCartItem() {
                             </select>
                         </p>
                         <p><strong>Quantity:</strong> 
+                        <div class="cartdelete">
                             <select class="quantity-selector" data-price="${details.price}">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
-                            </select>
+                            </select><button class="trash"><i class="fa fa-trash" aria-hidden="true" style="font-size:1.5rem"></i></button></div>
                         </p>
                     `;
 
@@ -170,6 +174,15 @@ function fetchCartItem() {
           boxItem.appendChild(itemElement);
           wishlistContainer.appendChild(boxItem);
           totalBill += details.price;
+        });
+
+        document.querySelectorAll(".trash").forEach((button) => {
+          button.addEventListener("click", function () {
+            let itemToRemove = this.closest(".box");
+            if(itemToRemove){
+             itemToRemove.remove()
+            }
+          });
         });
 
         // Create Total Bill Section

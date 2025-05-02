@@ -163,6 +163,12 @@ ul{
     gap: 2rem;
 }
 
+.cartdelete{
+    display: flex;
+    gap: 1rem;
+
+}
+
 .collections{
     margin-top: 1.5rem;
     width: 50%;

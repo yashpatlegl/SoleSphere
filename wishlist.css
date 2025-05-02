@@ -81,10 +81,18 @@ ul{
     justify-content: space-between;
     align-items: center;
     margin-top: 3rem;
-    width: 80vw;
+    width: 50vw;
     height: 30vh;
     border: 1px solid black;
     
+}
+
+.cartdelete{
+    display: flex;
+    gap: 15rem;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .photo{
@@ -107,7 +115,7 @@ ul{
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items:start;
 }
 
