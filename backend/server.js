@@ -159,6 +159,7 @@ app.post('/add-to-cart', (req, res) => {
         return res.status(400).json({ message: "Email and model are required." });
     }
 
+    
     const shoeIndex = findElementIndex(shoesData, "model", model);
     if (shoeIndex === -1) {
         return res.status(404).json({ message: "Shoe not found." });
@@ -213,10 +214,9 @@ app.get('/cart/:email', (req, res) => {
 });
 
 
-
 app.delete('/clear-cart/:email', (req, res) => {
     const email = req.params.email;
-
+console.log("asd");
     if (!fs.existsSync(cartFile)) {
         return res.status(404).json({ message: "No cart found." });
     }
@@ -232,8 +232,10 @@ app.delete('/clear-cart/:email', (req, res) => {
 
     fs.writeFileSync(cartFile, JSON.stringify(cart, null, 2));
 
+    console.log(`Cart for ${email} deleted`);
     res.json({ message: "Cart cleared successfully." });
 });
+
 
 
 

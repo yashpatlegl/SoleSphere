@@ -5,21 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thank You</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
+      .imaged {
+        /* justify-content: center; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
       }
-      .thank-you {
-        font-size: 24px;
-        color: green;
+      .imagediv {
+        background-image: url("images/checkout1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 80vw;
+
+        height: 80vh;
+
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      setTimeout(function() {
+          window.location.href = "index.html";
+      }, 2000); // Redirects after 2 seconds
+    </script>
   </head>
   <body>
-    <div class="thank-you">
-      Thank you !!<br />
-      Your Order is confirmed!!
+    <div class="navbar">
+      <p id="soles">
+        <strong style="color: aqua">S</strong><strong>olesSphere</strong>
+      </p>
+      <div class="icon">
+        <i class="fa fa-phone" style="font-size: 24px"></i>
+        <a href="/login.html"
+          ><i class="fa fa-sign-in" style="font-size: 24px"></i
+        ></a>
+      </div>
     </div>
+    <div class="imaged">
+      <div class="imagediv">
+        <div
+          style="
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <script src="navbar.js"></script>
   </body>
 </html>
