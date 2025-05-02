@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/cart.css">
+    <style>
+
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-page{
+            margin: 2.5rem;
+            width: 120vh;
+            height: 80vh;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+        .image-div{
+            width: 50%;
+            height: 100%;
+            /* margin: 0.5rem; */
+            border: 1px solid black;
+            background-image: url("/images/contact.jpg");
+            background-size: cover;
+            opacity: 0.9;
+        }
+
+        .form-div{
+            width: 50%;
+            height: 100%;
+            /* margin: 0.5rem; */
+            border: 1px solid black;
+            display: flex;
+            gap: 1.5rem;
+            
+            padding: 2rem;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        }
+        label{
+            padding: 2%;
+            /* margin: 1rem; */
+            width:100%;
+            height: fit-content;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 1.2rem;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+
+        .name{
+            width: 100%;
+            height: 7vh;
+            border: 1px solid black;
+            display: flex;
+
+        }
+
+        .firstname, .lastname{
+            width: 50%;
+            height: 100%;
+            border: 1px solid black;
+            text-align: center;
+            font-size: large;
+    
+        }
+
+        .email{
+            width: 100%;
+            height: 7vh;
+            border: 1px solid black;
+            text-align: center;
+            font-size: large;
+        }
+        #submit-button{
+            /* justify-self: center; */
+            align-self: center;
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size: large;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <p id="soles">
+                <a style="text-decoration: none; color: black;" href="/index.html"><strong style="color: aqua">S</strong><strong>olesSphere</strong></a>
+            </p>
+            <div class="icon">
+              <i class="fa fa-phone" style="font-size: 24px"></i>
+              <a href="/login.html"
+                ><i class="fa fa-sign-in" style="font-size: 24px"> </i
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact-page">
+            <div class="image-div">
+
+            </div>
+            <div class="form-div">
+                <h2 style="color: rgb(82, 185, 185); ">Send us a message</h2>
+                <form style="width: 100%;">
+                    <label style="width: 100%;display: block;">Tell me about yourself</label>
+                    <div class="name">
+                        <input placeholder="FirstName" type="text"  class="firstname">
+                        <input placeholder="LastName" type="text"  class="lastname">
+
+                    </div>
+                    <label class="email" style="width: 100%;display: block; height: fit-content; border: 1px solid black;">
+                        Enter Your Email
+                    </label>
+                    <input placeholder="Email" type="text"  class="email">
+                    <label class="email" style="width: 100%;display: block; height: fit-content; border: 1px solid black;">
+                        Enter Your Phone Number
+                    </label>
+                    <input placeholder="Eg + 1 8000 000000" type="text"  class="email">
+                    <label class="email" style="width: 100%;display: block; height: fit-content; border: 1px solid black;">
+                        Message
+                    </label>
+                    <textarea placeholder="Enter your message here" style="height: 11rem; width: 100%;"  class="email"></textarea>
+                    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <button onclick="alert('Thank you for your response!! we will contact you shortly')" type="reset" style="border-radius: 1rem; padding: 1rem; width: 8rem; " id="submit-button">Submit</button>
+
+                    </div>
+                </form>
+            </div>
+
+          </div>
+    </div>
+    <script>
+        const button12 = document.getElementById("submit-button");
+    
+    </script>
+    <script src="navbar.js"></script>
+</body>
+</html>
