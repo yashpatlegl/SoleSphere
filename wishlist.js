@@ -21,7 +21,7 @@ function addToCart(model) {
 
   const data = response.json();
   alert(data.message);
-  
+
 }
 
 
@@ -65,10 +65,18 @@ function fetchWishlist() {
 
           itemElement.className = "information";
           itemElement.innerHTML = `
-                        <p style="font-size:1.5rem"><strong>${details.model}</strong></p>
+                        <p style="font-size:1.5rem class="model-name"><strong>${details.model}</strong></p>
                         <p style="font-size:1.5rem"><strong>Price: $${details.price}<strong></p><div style="object-fit: cover; heigth: 2rem" >
-                        <button style="align-self: flex-end;" class="button-43" onclick=addToCart("${details.model}")>ADD TO CART</button>
+                       <button 
+    style="align-self: flex-end;" 
+    class="button-43" 
+    onclick="addToCart('${details.model.replace(/'/g, `\\'`)}')">
+    ADD TO CART
+</button>
+
                     `;
+                    
+                      
           boxiteam.appendChild(photoitem);
           boxiteam.appendChild(itemElement);
 
@@ -78,6 +86,12 @@ function fetchWishlist() {
         wishlistContainer.innerHTML =
           "<p>No wishlist found for this email.</p>";
       }
+    //   document.querySelectorAll(".button-43").forEach((button) => {
+    //     button.addEventListener("click", function () {
+    //       const model = this.getElementByClass("model-name");
+    //       addToCart(model);
+    //     });
+    //   });
     })
     .catch((error) => {
       console.error("Error fetching wishlist:", error);
@@ -85,12 +99,7 @@ function fetchWishlist() {
         "<p>Something went wrong. Please try again later.</p>";
     });
 
-//   document.querySelectorAll(".button-43").forEach((button) => {
-//     button.addEventListener("click", function () {
-//       const model = details.model;
-//       addToCart(model);
-//     });
-//   });
+  
 }
 
 // Example function to handle adding to cart
