@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
               });
           });
       })
-      .catch(error => console.error("Error fetching shoe data:", error));
+      .catch(error =>console.error("Error fetching shoe data:", error));
 
 
 
@@ -62,8 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 // }
 function displayShoes(shoes) {
+    const shoeContainer = document.getElementById("shoe-container");
     shoeContainer.innerHTML = "";
-    shoeContainer.style.gap = "1rem";
+    // shoeContainer.style.gap = "0.5rem";
   
     shoes.forEach(shoe => {
         const shoeDiv = document.createElement("div");
@@ -72,7 +73,8 @@ function displayShoes(shoes) {
         shoeDiv.style.alignItems = "center";
         shoeDiv.style.justifyContent="center";
         shoeDiv.style.textAlign = "center";
-        shoeDiv.style.height="80%"
+        shoeDiv.style.height="80%";
+        shoeDiv.style.margin="1.5rem"
         // shoeDiv.style.backgroundColor = "#F1F0E8";
         shoeDiv.style.borderRadius = "2rem";
         shoeDiv.style.transition = "transform 0.3s ease-in-out";
@@ -101,7 +103,8 @@ function displayShoes(shoes) {
         shoeImage.style.backgroundImage = `url('images/${shoe.image_path}')`;
         shoeImage.style.width = "100%";
         shoeImage.style.height = "100%";
-        shoeImage.style.alignSelf="start"
+        shoeImage.style.alignSelf="start";
+
   
         // Shoe Text Content (Initially Hidden)
         const shoeText = document.createElement("p");
@@ -124,41 +127,7 @@ function displayShoes(shoes) {
             addToWishlist(model);
         });
     });
-  }
-  
-
-
-
-
-    });
-
-//   // Function to display shoes dynamically
-//   function displayShoes(shoes) {
-//       shoeContainer.innerHTML = "";
-//       shoes.forEach(shoe => {
-//           const shoeDiv = document.createElement("div");
-//           shoeDiv.style.display = "flex";
-//           shoeDiv.style.flexDirection="column";
-//           shoeDiv.style.textAlign="center";
-
-
-//           shoeDiv.classList.add("items");
-//           shoeDiv.innerHTML = `
-//               <div class="card" style="background-image: url('images/${shoe.image_path}');"></div>
-//               <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-//               <br> <button  style="background-color: #DFD0B8; border:none; border-radius:5rem;  padding:0.5rem">ADD TO WISHLIST<i class="fa fa-heart"></i></button></p>
-//           `;
-//           shoeContainer.appendChild(shoeDiv);
-//       });
-//   }
-// });
-
-
-
-
-
-
-
+  } });
 
 
 // Navbar update function for user login/logout
@@ -177,9 +146,13 @@ function updateNavbar() {
       wishlink.appendChild(wishlistIcon);
   
       // Create shopping bag icon
+      let bagIcon = document.createElement("a");
+      bagIcon.href="cart.html";
+
       let shoppingBagIcon = document.createElement("i");
       shoppingBagIcon.className = "fa fa-shopping-bag";
       shoppingBagIcon.style.fontSize = "24px";
+      bagIcon.appendChild(shoppingBagIcon);
   
       // Create logout button
       let logoutButton = document.createElement("button");
@@ -194,8 +167,8 @@ function updateNavbar() {
   
       // Append user-related icons
       iconDiv.appendChild(wishlink);
-      iconDiv.appendChild(shoppingBagIcon);
-      iconDiv.appendChild(logoutButton);
+    //   iconDiv.appendChild(shoppingBagIcon);
+      iconDiv.appendChild(bagIcon);
   
       // Add event listener to logout button
       logoutButton.addEventListener("click", function() {
@@ -213,13 +186,14 @@ function updateNavbar() {
    function addToWishlist(model) {
     event.preventDefault();
 
-    const email = sessionStorage.getItem('email');
+    const email = sessionStorage.getItem("email");
     
 
     if (!email || !model) {
         alert("Both email and model fields are required.");
         return;
     }
+    alert("Wishlist Updated Succesfully!!");
 
     const response =  fetch("http://localhost:3000/add-to-wishlist", {
         method: "POST",

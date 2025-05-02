@@ -148,6 +148,69 @@ app.get('/wishlist/:email', (req, res) => {
     // res.json({ wishlist: wishlist[email] });
 });
 
+
+
+const cartFile = './cart.json';
+
+// Endpoint to add an item from wishlist to cart
+app.post('/add-to-cart', (req, res) => {
+    const { email, model } = req.body;
+    if (!email || !model) {
+        return res.status(400).json({ message: "Email and model are required." });
+    }
+
+    const shoeIndex = findElementIndex(shoesData, "model", model);
+    if (shoeIndex === -1) {
+        return res.status(404).json({ message: "Shoe not found." });
+    }
+
+    let cart = {};
+
+    // Load existing cart data if the file exists
+    if (fs.existsSync(cartFile)) {
+        const rawData = fs.readFileSync(cartFile);
+        cart = JSON.parse(rawData);
+    }
+
+    // Initialize cart for the email if it doesn't exist
+    if (!cart[email]) {
+        cart[email] = [];
+    }
+
+    // Add the shoe to the cart if it's not already there
+    if (!cart[email].includes(shoeIndex)) {
+        cart[email].push(shoeIndex);
+    }
+
+    // Save updated cart back to file
+    fs.writeFileSync(cartFile, JSON.stringify(cart, null, 2));
+    res.json({ message: `Cart updated for ${email}`, cart: cart[email] });
+});
+
+// Endpoint to get a user's cart and calculate total bill
+app.get('/cart/:email', (req, res) => {
+    const email = req.params.email;
+
+    if (!fs.existsSync(cartFile)) {
+        console.log("asd")
+        return res.status(404).json({ message: "No cart found." });
+    }
+
+    const cart = JSON.parse(fs.readFileSync(cartFile));
+
+    if (!cart[email]) {
+        return res.status(404).json({ message: "No cart found for this email." });
+    }
+
+    const cartItems = cart[email].map(index => shoesData.shoes[index]);
+    const totalBill = cartItems.reduce((sum, item) => sum + item.price, 0);
+    
+    // console.log ({ cartItems, totalBill });
+    res.json({ cartItems, totalBill });
+});
+
+
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

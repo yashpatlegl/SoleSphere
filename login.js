@@ -28,9 +28,6 @@ fetch('/backend/accounts.json')
         // console.log('Accounts loaded:', accounts); // For debugging
     });
 
-
-
-
 registerBtn.addEventListener('click', () => {
         const name = document.querySelector('.sign-up input[type="text"]').value;
         const email = document.querySelector('.sign-up input[type="email"]').value;

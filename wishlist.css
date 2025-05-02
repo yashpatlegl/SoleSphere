@@ -13,6 +13,7 @@
     align-items: center;
 }
 body{
+    overflow-x: hidden;
     background-color: #FFFDF6;
     /* background:#FFFDF6; */
     display: flex;
@@ -49,7 +50,7 @@ body{
 
 li{
     text-decoration: none;
-    color: ;
+    /* color: ; */
 }
 
 .container-navbar{

@@ -23,16 +23,84 @@
               ></a>
             </div>
           </div>
-
-          <div class="cart">
-            <h1>MY CART</h1>
-          </div>
-
-
-          <div class="collections">
+          <div class="container">
+            <div class="container-navbar">
+              <ul>
+                <li>
+                  <p style="font-size: 2rem"><b>MY CART</b></p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <pre id="count" style="font-size: 1.5rem"><i>Total Items Added :</i> <b id="cartCount"></b></pre>
+                </li>
+              </ul>
+            </div>
+            <hr />
+            <div class="page">
+              <div class="collections" id="collectionbox">
+              </div>
+              <div id="bill">
+              </div>
+            </div>
             
           </div>
     </div>
+    <script>
+      function updateNavbar() {
+    let iconDiv = document.querySelector(".icon");
+    
+    // Check user login status
+    if (sessionStorage.getItem("userLoggedIn") === "true") {
+      // Create wishlist icon
+      let wishlink = document.createElement("a");
+      wishlink.href = "wishlist.html";
+
+      let wishlistIcon = document.createElement("i");
+      wishlistIcon.className = "fa fa-heart";
+      wishlistIcon.style.fontSize = "24px";
+      wishlink.appendChild(wishlistIcon);
+  
+      // Create shopping bag icon
+      let bagIcon = document.createElement("a");
+      bagIcon.href="cart.html";
+
+      let shoppingBagIcon = document.createElement("i");
+      shoppingBagIcon.className = "fa fa-shopping-bag";
+      shoppingBagIcon.style.fontSize = "24px";
+      bagIcon.appendChild(shoppingBagIcon);
+  
+      // Create logout button
+      let logoutButton = document.createElement("button");
+      logoutButton.setAttribute("id", "ayushi");
+      logoutButton.textContent = "Logout";
+      logoutButton.style.marginLeft = "10px";
+      logoutButton.style.padding = "5px 10px";
+      logoutButton.style.border = "none";
+      logoutButton.style.backgroundColor = "red";
+      logoutButton.style.color = "white";
+      logoutButton.style.cursor = "pointer";
+  
+      // Append user-related icons
+      iconDiv.appendChild(wishlink);
+    //   iconDiv.appendChild(shoppingBagIcon);
+      iconDiv.appendChild(bagIcon);
+  
+      // Add event listener to logout button
+      logoutButton.addEventListener("click", function() {
+        // Remove wishlist and shopping bag icons
+        if (wishlistIcon && shoppingBagIcon) {
+          iconDiv.removeChild(wishlistIcon);
+          iconDiv.removeChild(shoppingBagIcon);
+        }
+      });
+    }
+  }
+  window.onload = updateNavbar;
+
+    </script>
+    <!-- <script src="/navbar.js"></script> -->
+    <script src="/cart.js"></script>
     
 </body>
 </html>
