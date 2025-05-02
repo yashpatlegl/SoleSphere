@@ -18,49 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(error =>console.error("Error fetching shoe data:", error));
 
-
-
-      
-// function displayShoes(shoes) {
-//   shoeContainer.innerHTML = "";
-//   shoeContainer.style.gap ="1rem";
-//   shoes.forEach(shoe => {
-//       const shoeDiv = document.createElement("div");
-//       shoeDiv.style.display = "flex";
-//       shoeDiv.style.flexDirection = "column";
-//       shoeDiv.style.textAlign = "center";
-//       shoeDiv.style.backgroundColor="#F1F0E8"
-//       shoeDiv.style.borderRadius="2rem";
-//       shoeDiv.style.transition="transform 0.3s ease-in-out";
-//       shoeDiv.addEventListener("mouseover", ()=>
-//     {
-//         shoeDiv.style.transform="scale(1.1)"
-//     });
-//     shoeDiv.addEventListener("mouseout", ()=>
-//     {
-//         shoeDiv.style.transform="scale(1)"
-//     });
-
-//       shoeDiv.classList.add("items");
-//       shoeDiv.innerHTML = `
-//           <div class="card" style="border-radius:2rem; object-fit: cover; background-size: cover; background-image: url('images/${shoe.image_path}'); "></div>
-//           <p><strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-//           <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none;  padding:0.5rem">
-//               ADD TO WISHLIST <i class="fa fa-heart"></i>
-//           </button></p>
-//       `;
-
-//       shoeContainer.appendChild(shoeDiv);
-//   });
-
-//   // Add event listeners to all wishlist buttons
-//   document.querySelectorAll(".wishlist-btn").forEach(button => {
-//       button.addEventListener("click", function() {
-//           const model = this.getAttribute("data-model");
-//           addToWishlist(model);
-//       });
-//   });
-// }
 function displayShoes(shoes) {
     const shoeContainer = document.getElementById("shoe-container");
     shoeContainer.innerHTML = "";
@@ -111,8 +68,8 @@ function displayShoes(shoes) {
   
         const shoeText = document.createElement("p");
         shoeText.innerHTML = `<strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
-            <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; padding:0.5rem">
-                ADD TO WISHLIST <i class="fa fa-heart"></i>
+            <br> <button class="wishlist-btn" data-model="${shoe.model}" style="background-color: #DFD0B8; border:none; padding:0.5rem;">
+                 <i class="fa fa-heart">ADD TO WISHLIST</i>
             </button>
             
             `;
@@ -135,6 +92,32 @@ function displayShoes(shoes) {
   } });
 
 
+//   loginBtn.addEventListener('click', () => {
+
+
+//     const email = document.querySelector('.sign-in input[type="email"]').value;
+//     const password = document.querySelector('.sign-in input[type="password"]').value;
+
+//     const user = accounts.find(account => account.email === email && account.password === password);
+
+//     if (user) {
+//         sessionStorage.setItem("email", email);
+//         sessionStorage.setItem("userLoggedIn", "true");
+//         updateNavbar();
+//         console.log(`Login successful: Welcome, ${user.username}!`);
+//         event.preventDefault();
+//         // Redirect to index.html
+//         window.location.href = "index.html";
+
+//         // Redirect to another page or display user dashboard here
+//     } else {
+//         console.log('Invalid email or password.');
+//         alert('Invalid email or password. Please try again.');
+//     }
+
+//     container.classList.remove("active"); // Switch to Sign Up
+// });
+
 // Navbar update function for user login/logout
 function updateNavbar() {
     let iconDiv = document.querySelector(".icon");
@@ -151,13 +134,14 @@ function updateNavbar() {
       wishlink.appendChild(wishlistIcon);
   
       // Create shopping bag icon
+
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
       let shoppingBagIcon = document.createElement("i");
       shoppingBagIcon.className = "fa fa-shopping-bag";
       shoppingBagIcon.style.fontSize = "24px";
-      bagIcon.appendChild(shoppingBagIcon);
+      bagIcon.appendChild(shoppingBagIcon)
   
       // Create logout button
       let logoutButton = document.createElement("button");
@@ -172,15 +156,16 @@ function updateNavbar() {
   
       // Append user-related icons
       iconDiv.appendChild(wishlink);
-    //   iconDiv.appendChild(shoppingBagIcon);
       iconDiv.appendChild(bagIcon);
+      iconDiv.appendChild(logoutButton);
   
       // Add event listener to logout button
       logoutButton.addEventListener("click", function() {
         // Remove wishlist and shopping bag icons
-        if (wishlistIcon && shoppingBagIcon) {
-          iconDiv.removeChild(wishlistIcon);
-          iconDiv.removeChild(shoppingBagIcon);
+        if (wishlink && bagIcon) {
+          iconDiv.removeChild(wishlink);
+          iconDiv.removeChild(bagIcon);
+          sessionStorage.clear();
         }
       });
     }

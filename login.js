@@ -140,7 +140,7 @@ function updateNavbar() {
   }
   
   // Initialize navbar on page load
-  window.onload = updateNavbar;
+//   window.onload = updateNavbar;
   
 
 

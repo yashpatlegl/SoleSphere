@@ -82,7 +82,7 @@ ul{
     align-items: center;
     margin-top: 3rem;
     width: 80vw;
-    height: 45vh;
+    height: 30vh;
     border: 1px solid black;
     
 }
@@ -90,8 +90,8 @@ ul{
 .photo{
     /* padding-left: 2rem; */
     /* margin: 2rem; */
-    width: 15rem;
-    height: 15rem;
+    width: 15em;
+    height: 15em;
     background-image: url('/images/w8.avif');
     background-size: cover;
 }

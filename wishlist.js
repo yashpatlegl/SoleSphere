@@ -58,14 +58,14 @@ function fetchWishlist() {
           const itemElement = document.createElement("div");
           const photoitem = document.createElement("div");
           photoitem.className = "photo";
-          photoitem.style.width = "15rem";
-          photoitem.style.height = "15rem";
+          photoitem.style.width = "15em";
+          photoitem.style.height = "15em";
           photoitem.style.backgroundImage = `url('images/${details.image_path}')`;
           photoitem.style.backgroundSize = "cover";
 
           itemElement.className = "information";
           itemElement.innerHTML = `
-                        <p style="font-size:1.5rem class="model-name"><strong>${details.model}</strong></p>
+                        <p style="font-size:1.5rem class="model-name"><strong style="font-size:2rem">${details.model}</strong></p>
                         <p style="font-size:1.5rem"><strong>Price: $${details.price}<strong></p><div style="object-fit: cover; heigth: 2rem" >
                        <button 
     style="align-self: flex-end;" 
