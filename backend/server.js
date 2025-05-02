@@ -214,6 +214,30 @@ app.get('/cart/:email', (req, res) => {
 
 
 
+app.delete('/clear-cart/:email', (req, res) => {
+    const email = req.params.email;
+
+    if (!fs.existsSync(cartFile)) {
+        return res.status(404).json({ message: "No cart found." });
+    }
+
+    let cart = JSON.parse(fs.readFileSync(cartFile));
+
+    if (!cart[email]) {
+        return res.status(404).json({ message: "No cart found for this email." });
+    }
+
+    // Remove all items for the user
+    delete cart[email];
+
+    fs.writeFileSync(cartFile, JSON.stringify(cart, null, 2));
+
+    res.json({ message: "Cart cleared successfully." });
+});
+
+
+
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
