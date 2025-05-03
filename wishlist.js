@@ -50,8 +50,8 @@ function fetchWishlist() {
           const itemElement = document.createElement("div");
           const photoitem = document.createElement("div");
           photoitem.className = "photo";
-          photoitem.style.width = "15em";
-          photoitem.style.height = "15em";
+          photoitem.style.width = "15rem";
+          photoitem.style.height = "15rem";
           photoitem.style.backgroundImage = `url('images/${details.image_path}')`;
           photoitem.style.backgroundSize = "cover";
 

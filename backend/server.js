@@ -288,6 +288,69 @@ app.delete("/remove-from-wishlist", (req, res) => {
 
 
 
+
+
+
+
+
+//for delete from cart
+const readCart = () => {
+    try {
+        const data = fs.readFileSync(cartFile, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error("Error reading cart:", error);
+        return {};
+    }
+};
+
+// Function to write updated wishlist data
+const writeCart = (data) => {
+    try {
+        fs.writeFileSync(cartFile, JSON.stringify(data, null, 2), "utf-8");
+    } catch (error) {
+        console.error("Error writing cart:", error);
+    }
+};
+
+app.delete("/remove-from-cart", (req, res) => {
+    const { email, model } = req.body;
+
+    if (!email || !model) {
+        return res.status(400).json({ success: false, message: "Email and model are required." });
+    }
+
+    let cart = readCart();
+
+    if (!cart[email]) {
+        return res.status(404).json({ success: false, message: "No items in add to cart found for this email." });
+    }
+
+    // Find the index of the model from shoes.json
+    const shoeIndex = shoesData.shoes.findIndex(shoe => shoe.model === model);
+
+    if (shoeIndex === -1 || !cart[email].includes(shoeIndex)) {
+        return res.status(404).json({ success: false, message: "Item not found in Cart." });
+    }
+
+    // Remove the index from the wishlist
+    cart[email] = cart[email].filter(index => index !== shoeIndex);
+
+    // Save updated wishlist
+    writeCart(cart);
+
+    res.json({ success: true, message: `${model} removed from Add to Cart.` });
+});
+
+
+
+
+
+
+
+
+
+
 // Start server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
