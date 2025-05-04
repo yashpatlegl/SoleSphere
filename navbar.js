@@ -37,21 +37,146 @@ function updateNavbar() {
       let wishlink = document.createElement("a");
       wishlink.href = "wishlist.html";
 
-      let wishlistIcon = document.createElement("i");
-      wishlistIcon.className = "fa fa-heart";
-      wishlistIcon.style.fontSize = "24px";
-      wishlink.appendChild(wishlistIcon);
+    //   let wishlistIcon = document.createElement("i");
+    //   wishlistIcon.className = "fa fa-heart";
+    //   wishlistIcon.style.fontSize = "24px";
+    //   wishlink.appendChild(wishlistIcon);
+
+// Get the logged-in user's email from sessionStorage
+let userEmail = sessionStorage.getItem("email"); // Ensure this is stored during login
+
+// Fetch the wishlist data from wishlist.json
+fetch("backend/wishlist.json")
+  .then(response => response.json()) // Convert response to JSON
+  .then(wishlistData => {
+    // Retrieve the array for this user and get its length
+    let wishlistCountValue = wishlistData[userEmail] ? wishlistData[userEmail].length : 0;
+
+    // Create wishlist link wrapper
+    // let wishlink = document.createElement("a");
+    // wishlink.href = "wishlist.html";
+    wishlink.style.position = "relative";
+    wishlink.style.display = "inline-block";
+
+    // Create wishlist heart icon
+    let wishlistIcon = document.createElement("i");
+    wishlistIcon.className = "fa fa-heart";
+    wishlistIcon.style.fontSize = "24px";
+
+    // Create the wishlist count badge
+    let wishlistCount = document.createElement("span");
+    wishlistCount.innerText = wishlistCountValue; // Set wishlist count dynamically
+    wishlistCount.style.position = "absolute";
+    wishlistCount.style.top = "-5px";
+    wishlistCount.style.right = "-10px";
+    wishlistCount.style.backgroundColor = "red";
+    wishlistCount.style.color = "white";
+    wishlistCount.style.padding = "4px 6px";
+    wishlistCount.style.borderRadius = "50%";
+    wishlistCount.style.fontSize = "12px";
+    wishlistCount.style.fontWeight = "bold";
+
+    // Append elements
+    wishlink.appendChild(wishlistIcon);
+    wishlink.appendChild(wishlistCount);
+    // wishlink.appendChild(wishlink); // Append to the page
+  })
+  .catch(error => console.error("Error loading wishlist.json:", error));
+
+
+
+
+
+
+
+    
   
       // Create shopping bag icon
 
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
-      let shoppingBagIcon = document.createElement("i");
-      shoppingBagIcon.className = "fa fa-shopping-bag";
-      shoppingBagIcon.style.fontSize = "24px";
-      bagIcon.appendChild(shoppingBagIcon)
-  
+    //   let shoppingBagIcon = document.createElement("i");
+    //   shoppingBagIcon.className = "fa fa-shopping-bag";
+    //   shoppingBagIcon.style.fontSize = "24px";
+    //   bagIcon.appendChild(shoppingBagIcon);
+
+
+
+//     // Create a wrapper div
+// let bagIconWrapper = document.createElement("div");
+// bagIconWrapper.style.position = "relative";
+// bagIconWrapper.style.display = "inline-block";
+
+// // Create the shopping bag icon
+// let shoppingBagIcon = document.createElement("i");
+// shoppingBagIcon.className = "fa fa-shopping-bag";
+// shoppingBagIcon.style.fontSize = "24px";
+
+// // Create the number badge
+// let itemCount = document.createElement("span");
+// itemCount.innerText = "5"; // Set cart count dynamically
+// itemCount.style.position = "absolute";
+// itemCount.style.top = "-5px";
+// itemCount.style.right = "-10px";
+// itemCount.style.backgroundColor = "red";
+// itemCount.style.color = "white";
+// itemCount.style.padding = "4px 6px";
+// itemCount.style.borderRadius = "50%";
+// itemCount.style.fontSize = "12px";
+// itemCount.style.fontWeight = "bold";
+
+// // Append elements
+// bagIconWrapper.appendChild(shoppingBagIcon);
+// bagIconWrapper.appendChild(itemCount);
+// bagIcon.appendChild(bagIconWrapper);  // Change this if needed
+
+    
+
+// Get the logged-in user's email from sessionStorage
+// let userEmail = sessionStorage.getItem("email"); // Ensure this is stored during login
+
+// Fetch the cart data from the cart.json file
+fetch("backend/cart.json")
+  .then(response => response.json()) // Convert response to JSON
+  .then(cartData => {
+    // Retrieve the array for this user and get its length
+    let itemCountValue = cartData[userEmail] ? cartData[userEmail].length : 0;
+
+    // Create shopping bag icon wrapper
+    let bagIconWrapper = document.createElement("div");
+    bagIconWrapper.style.position = "relative";
+    bagIconWrapper.style.display = "inline-block";
+
+    // Create shopping bag icon
+    let shoppingBagIcon = document.createElement("i");
+    shoppingBagIcon.className = "fa fa-shopping-bag";
+    shoppingBagIcon.style.fontSize = "24px";
+
+    // Create the number badge
+    let itemCount = document.createElement("span");
+    itemCount.innerText = itemCountValue; // Set cart count dynamically
+    itemCount.style.position = "absolute";
+    itemCount.style.top = "-5px";
+    itemCount.style.right = "-10px";
+    itemCount.style.backgroundColor = "red";
+    itemCount.style.color = "white";
+    itemCount.style.padding = "4px 6px";
+    itemCount.style.borderRadius = "50%";
+    itemCount.style.fontSize = "12px";
+    itemCount.style.fontWeight = "bold";
+
+    // Append elements
+    bagIconWrapper.appendChild(shoppingBagIcon);
+    bagIconWrapper.appendChild(itemCount);
+    bagIcon.appendChild(bagIconWrapper);
+  })
+  .catch(error => console.error("Error loading cart.json:", error));
+
+
+
+
+
       // Create logout button
       let logoutButton = document.createElement("button");
       logoutButton.setAttribute("id", "ayushi");
