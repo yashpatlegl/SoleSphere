@@ -107,6 +107,31 @@ function updateNavbar() {
     const data =  response.json();
     alert(data.message);
   }
+
+
+  function addToCart(model) {
+    console.log(`Adding ${model}  to cart...`);
+    //   alert(`${model} added to cart!`);
+    event.preventDefault();
+  
+    const email = sessionStorage.getItem("email");
+    if (!email || !model) {
+      alert("Both email and model fields are required.");
+      return;
+    }
+    //   alert("Item Added to Cart!!");
+  
+    const response = fetch("http://localhost:3000/add-to-cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, model }),
+    });
+  
+    const data = response.json();
+    alert(data.message);
+  }
   
   // Initialize navbar on page load
 window.onload = updateNavbar;
