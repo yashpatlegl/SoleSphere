@@ -63,7 +63,10 @@ function updateNavbar() {
       logoutButton.style.backgroundColor="black"
       logoutButton.style.color = "white";
       logoutButton.style.cursor = "pointer";
-  
+      var loginLink = document.querySelector('a[href="/login.html"]');
+      if (loginLink) {
+          loginLink.remove();
+      }
       // Append user-related icons
       iconDiv.appendChild(wishlink);
       iconDiv.appendChild(bagIcon);
@@ -76,6 +79,7 @@ function updateNavbar() {
           iconDiv.removeChild(wishlink);
           iconDiv.removeChild(bagIcon);
           iconDiv.removeChild(logoutButton);
+          iconDiv.appendChild(loginLink);
           sessionStorage.clear();
         }
       });
