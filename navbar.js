@@ -96,6 +96,7 @@ function updateNavbar() {
 
     if (!email || !model) {
         alert("Both email and model fields are required.");
+        window.location.href = "/login.html";
         return;
     }
     alert("Wishlist Updated Succesfully!!");
@@ -121,6 +122,7 @@ function updateNavbar() {
     const email = sessionStorage.getItem("email");
     if (!email || !model) {
       alert("Both email and model fields are required.");
+      window.location.href = "/login.html";
       return;
     }
     //   alert("Item Added to Cart!!");
