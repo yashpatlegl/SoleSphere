@@ -1,0 +1,242 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+.main{
+    padding-top: 0%;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    overflow-x: hidden;
+    background-color: #FFFDF6;
+    /* background:#FFFDF6; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    height: 100vh;
+    box-sizing: border-box;
+
+}
+
+.navbar{
+    margin: 0%;
+    padding: 0%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0.1vw 1vh;
+    /* position: fixed; */
+    background-color: white; 
+}
+
+
+.icon {
+    padding-right: 2%;
+    display: flex;
+    gap: 2vw; /* Adds spacing between icons */
+}
+
+.fa{
+    color: black;
+}
+
+#soles{
+    font-size: 280%;
+}
+
+li{
+    text-decoration: none;
+    /* color: ; */
+}
+
+.container-navbar{
+    margin-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    width: 80vw;
+    height: 10vh;
+    /* background-color: aquamarine;
+    border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon i:hover {
+    transform: scale(1.4);
+}
+
+
+.box{
+    margin: 6rem;
+    width: 55%;
+    height: 110vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    transition: transfrom 0.6 ease-in-out;
+}
+
+.box:hover{
+    transform: scale(1.02);
+}
+
+.form{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+label, input{
+    width: 100%;
+    height: 6vh;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    display: flex;
+    padding: 1rem;
+    justify-content: start;
+    align-items: center;
+    /* text-align: center; */
+
+}
+
+
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    height: 100%;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+#feedback-div{
+    position: relative;
+    /* height: 70%; */
+    width: 100%;
+}
+/* #speech{
+    position: absolute;
+} */
+
+.feedback-area{
+    width: 100%;
+    height: 25vh;
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 1.5rem;
+    position: relative;
+}
+#fee{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fa{
+    font-size: 2rem;
+}
+
+
+#speech{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+i{
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+i:hover{
+    transform: scale(1.2);
+}
+
+.emoji{
+    width: 100%;
+    height: 10vh;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.emoji-face{
+    font-size: 3.5rem;
+    border: 0px;
+    transition: transform 0.3s ease-in-out;
+
+    
+}
+
+.emoji-face:hover{
+    transform: scale(1.2);
+}
+.submit-button{
+    margin: 2rem;
+    width: 2%;
+}
+
+.emoji button{
+    border: 0px;
+    border-radius: 50%;
+}
+/* button{
+    height: 10vh;
+
+} */
+
+
+#submit-button{
+    /* margin: 1rem; */
+    height: 5vh;
+    width: 10vw;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    touch-action: manipulation;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+}
+
+#submit-button:hover{
+    transform: scale(1.2);
+}
