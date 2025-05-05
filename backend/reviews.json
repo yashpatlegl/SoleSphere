@@ -444,6 +444,32 @@
         ],
         "negative": []
       }
+    },
+    {
+      "review": "that projuct was good",
+      "timestamp": "2025-05-05T09:34:49.696Z",
+      "sentimentAnalysis": {
+        "score": 3,
+        "comparative": 0.75,
+        "calculation": [
+          {
+            "good": 3
+          }
+        ],
+        "tokens": [
+          "that",
+          "product",
+          "was",
+          "good"
+        ],
+        "words": [
+          "good"
+        ],
+        "positive": [
+          "good"
+        ],
+        "negative": []
+      }
     }
   ],
   "tanu@gmail.com": [

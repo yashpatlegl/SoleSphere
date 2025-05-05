@@ -19,24 +19,24 @@ document.getElementById("speech").addEventListener("click", function (e) {
   };
 });
 
-// document.getElementById("toggleTheme").addEventListener("click", function () {
-//   document.body.classList.toggle("dark-theme");
+document.getElementById("toggleTheme").addEventListener("click", function () {
+  document.body.classList.toggle("dark-theme");
 
-//   if (document.body.classList.contains("dark-theme")) {
-//     localStorage.setItem("theme", "dark");
-//   } else {
-//     localStorage.setItem("theme", "light");
-//   }
-// });
+  if (document.body.classList.contains("dark-theme")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
 
-// window.addEventListener("load", function () {
-//   if (localStorage.getItem("theme") === "dark") {
-//     document.body.classList.add("dark-theme");
-//     // this.document.getElementById("toggleTheme").style.color="white";
-//     const ii = this.document.getElementById("#toggleTheme");
-//     ii.style.color = "black";
-//   }
-// });
+window.addEventListener("load", function () {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+    // this.document.getElementById("toggleTheme").style.color="white";
+    const ii = this.document.getElementById("#toggleTheme");
+    ii.style.color = "black";
+  }
+});
 
 const micButton = document.getElementById("speech");
 
