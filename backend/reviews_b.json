@@ -1,0 +1,197 @@
+{
+    "ayushi@gmail.com": [
+      {
+        "review": "we had a wonderful experience",
+        "timestamp": "2025-05-05T07:58:08.028Z",
+        "sentimentAnalysis": {
+          "score": 4,
+          "comparative": 0.8,
+          "calculation": [
+            {
+              "wonderful": 4
+            }
+          ],
+          "tokens": [
+            "we",
+            "had",
+            "a",
+            "wonderful",
+            "experience"
+          ],
+          "words": [
+            "wonderful"
+          ],
+          "positive": [
+            "wonderful"
+          ],
+          "negative": []
+        }
+      },
+      {
+        "review": "Terrble experince, wuld not recomend to anyone.",
+        "timestamp": "2025-05-05T08:00:47.908Z",
+        "sentimentAnalysis": {
+          "score": -5,
+          "comparative": -0.7142857142857143,
+          "calculation": [
+            {
+              "recommend": -2
+            },
+            {
+              "terrible": -3
+            }
+          ],
+          "tokens": [
+            "terrible",
+            "experience",
+            "would",
+            "not",
+            "recommend",
+            "to",
+            "anyone"
+          ],
+          "words": [
+            "recommend",
+            "terrible"
+          ],
+          "positive": [],
+          "negative": [
+            "recommend",
+            "terrible"
+          ]
+        }
+      }
+    ],
+    "anshu@gmail.com": [
+      {
+        "review": "Excellnt servce and frendly staf",
+        "timestamp": "2025-05-05T08:01:59.136Z",
+        "sentimentAnalysis": {
+          "score": 5,
+          "comparative": 1,
+          "calculation": [
+            {
+              "friendly": 2
+            },
+            {
+              "excellent": 3
+            }
+          ],
+          "tokens": [
+            "excellent",
+            "serve",
+            "and",
+            "friendly",
+            "staph"
+          ],
+          "words": [
+            "friendly",
+            "excellent"
+          ],
+          "positive": [
+            "friendly",
+            "excellent"
+          ],
+          "negative": []
+        }
+      }
+    ],
+    "sana@gmail.com": [
+      {
+        "review": "Not worth the prce. Very disapointing.",
+        "timestamp": "2025-05-05T08:02:23.587Z",
+        "sentimentAnalysis": {
+          "score": -4,
+          "comparative": -0.6666666666666666,
+          "calculation": [
+            {
+              "disappointing": -2
+            },
+            {
+              "worth": -2
+            }
+          ],
+          "tokens": [
+            "not",
+            "worth",
+            "the",
+            "price",
+            "very",
+            "disappointing"
+          ],
+          "words": [
+            "disappointing",
+            "worth"
+          ],
+          "positive": [],
+          "negative": [
+            "disappointing",
+            "worth"
+          ]
+        }
+      }
+    ],
+    "tanu@gmail.com": [
+      {
+        "review": "Item arived late and custmer support was unhelpfl.",
+        "timestamp": "2025-05-05T08:03:43.863Z",
+        "sentimentAnalysis": {
+          "score": 2,
+          "comparative": 0.25,
+          "calculation": [
+            {
+              "support": 2
+            }
+          ],
+          "tokens": [
+            "item",
+            "rived",
+            "late",
+            "and",
+            "customer",
+            "support",
+            "was",
+            "unhelpful"
+          ],
+          "words": [
+            "support"
+          ],
+          "positive": [
+            "support"
+          ],
+          "negative": []
+        }
+      }
+    ],
+    "k@gmial.com": [
+      {
+        "review": "I absolutly adore this! Will buy agan.",
+        "timestamp": "2025-05-05T08:04:14.694Z",
+        "sentimentAnalysis": {
+          "score": 3,
+          "comparative": 0.42857142857142855,
+          "calculation": [
+            {
+              "adore": 3
+            }
+          ],
+          "tokens": [
+            "i",
+            "absolutely",
+            "adore",
+            "this",
+            "will",
+            "buy",
+            "egan"
+          ],
+          "words": [
+            "adore"
+          ],
+          "positive": [
+            "adore"
+          ],
+          "negative": []
+        }
+      }
+    ]
+  }

@@ -5,11 +5,6 @@
     "password": "password123"
   },
   {
-    "username": "yash",
-    "email": "edrfghj",
-    "password": "yash"
-  },
-  {
     "username": "ayushi",
     "email": "ayushi@gmail.com",
     "password": "ayushi"
@@ -35,8 +30,168 @@
     "password": "1234"
   },
   {
-    "username": "a",
-    "email": "a@gmail.com",
-    "password": "a"
+    "username": "k",
+    "email": "k@gmial.com",
+    "password": "k"
+  },
+  {
+    "username": "triveni",
+    "email": "triveni@example.com",
+    "password": "triveni"
+  },
+  {
+    "username": "priya",
+    "email": "priya@example.com",
+    "password": "priya"
+  },
+  {
+    "username": "vedant",
+    "email": "vedant@example.com",
+    "password": "vedant"
+  },
+  {
+    "username": "raj",
+    "email": "raj@example.com",
+    "password": "raj"
+  },
+  {
+    "username": "amit",
+    "email": "amit@example.com",
+    "password": "amit"
+  },
+  {
+    "username": "atherv",
+    "email": "atherv@example.com",
+    "password": "atherv"
+  },
+  {
+    "username": "rohit",
+    "email": "rohit@example.com",
+    "password": "rohit"
+  },
+  {
+    "username": "sneha",
+    "email": "sneha@example.com",
+    "password": "sneha"
+  },
+  {
+    "username": "akash",
+    "email": "akash@example.com",
+    "password": "akash"
+  },
+  {
+    "username": "deepa",
+    "email": "deepa@example.com",
+    "password": "deepa"
+  },
+  {
+    "username": "vikas",
+    "email": "vikas@example.com",
+    "password": "vikas"
+  },
+  {
+    "username": "ananya",
+    "email": "ananya@example.com",
+    "password": "ananya"
+  },
+  {
+    "username": "yash",
+    "email": "yash@example.com",
+    "password": "yash"
+  },
+  {
+    "username": "shivani",
+    "email": "shivani@example.com",
+    "password": "shivani"
+  },
+  {
+    "username": "manish",
+    "email": "manish@example.com",
+    "password": "manish"
+  },
+  {
+    "username": "neha",
+    "email": "neha@example.com",
+    "password": "neha"
+  },
+  {
+    "username": "karan",
+    "email": "karan@example.com",
+    "password": "karan"
+  },
+  {
+    "username": "swati",
+    "email": "swati@example.com",
+    "password": "swati"
+  },
+  {
+    "username": "ravi",
+    "email": "ravi@example.com",
+    "password": "ravi"
+  },
+  {
+    "username": "mohit",
+    "email": "mohit@example.com",
+    "password": "mohit"
+  },
+  {
+    "username": "pallavi",
+    "email": "pallavi@example.com",
+    "password": "pallavi"
+  },
+  {
+    "username": "sachin",
+    "email": "sachin@example.com",
+    "password": "sachin"
+  },
+  {
+    "username": "jyoti",
+    "email": "jyoti@example.com",
+    "password": "jyoti"
+  },
+  {
+    "username": "rahul",
+    "email": "rahul@example.com",
+    "password": "rahul"
+  },
+  {
+    "username": "sonal",
+    "email": "sonal@example.com",
+    "password": "sonal"
+  },
+  {
+    "username": "gaurav",
+    "email": "gaurav@example.com",
+    "password": "gaurav"
+  },
+  {
+    "username": "divya",
+    "email": "divya@example.com",
+    "password": "divya"
+  },
+  {
+    "username": "naman",
+    "email": "naman@example.com",
+    "password": "naman"
+  },
+  {
+    "username": "ishita",
+    "email": "ishita@example.com",
+    "password": "ishita"
+  },
+  {
+    "username": "shubham",
+    "email": "shubham@example.com",
+    "password": "shubham"
+  },
+  {
+    "username": "radhika",
+    "email": "radhika@example.com",
+    "password": "radhika"
+  },
+  {
+    "username": "harsh",
+    "email": "harsh@example.com",
+    "password": "harsh"
   }
 ]

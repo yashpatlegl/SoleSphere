@@ -1,0 +1,180 @@
+
+  var i=0;
+
+
+  const sendReviews = async () => {
+    
+    const total_reviews = [
+        "Absolutely loved the product. Highly recommended!",
+        "The item arrived on time and works perfectly.",
+        "Very disappointed with the quality. Not worth the price.",
+        "Great customer service and fast shipping!",
+        "I expected better packaging, but the product itself is good.",
+        "Works as described. Satisfied with the purchase.",
+        "Terrible experience. I will not buy from here again.",
+        "Amazing build quality and smooth performance.",
+        "It’s okay, does the job but nothing special.",
+        "Fantastic! Met all my expectations.",
+        "The product stopped working after a week.",
+        "Very easy to use and setup was quick.",
+        "Item matched the description exactly.",
+        "I received a damaged item and had to return it.",
+        "Good value for money. Will buy again.",
+        "Not as durable as I hoped.",
+        "The color was slightly different from the picture.",
+        "Customer support was helpful and resolved my issue quickly.",
+        "Product was missing some parts.",
+        "It looks nice but feels cheap.",
+        "Shipping took longer than expected.",
+        "Five stars for quality and delivery.",
+        "Very intuitive interface and sleek design.",
+        "Battery life is shorter than advertised.",
+        "Loved the features and the price was reasonable.",
+        "I had higher expectations. A bit underwhelming.",
+        "Fantastic quality at this price point.",
+        "Disappointed with the customer service.",
+        "It works fine for basic use.",
+        "Exceeded my expectations in every way.",
+        "Would not recommend. Poor performance.",
+        "Impressive product. Will order more.",
+        "The instructions were confusing.",
+        "Perfect size and looks great.",
+        "Build quality is excellent. Feels premium.",
+        "A bit overpriced for what it offers.",
+        "Easy to install and use.",
+        "Too noisy for my liking.",
+        "Received a different model than ordered.",
+        "No complaints so far. Great experience.",
+        "It broke within a month of use.",
+        "Responsive seller and fast resolution of issues.",
+        "Doesn't perform as advertised.",
+        "Very pleased with the purchase.",
+        "Unboxing was fun and product was spotless.",
+        "Misleading description. Disappointed.",
+        "It gets the job done.",
+        "Exceeded my expectations for this price.",
+        "Feels sturdy and well-made.",
+        "I had to return it due to a defect.",
+        "Highly functional and attractive design.",
+        "Average quality. Not bad, not great.",
+        "Amazing experience from order to delivery.",
+        "Cheap materials and weak performance.",
+        "I’m very happy with my purchase.",
+        "Product arrived sooner than expected.",
+        "No user manual was included.",
+        "I wouldn’t buy this again.",
+        "Easy to clean and maintain.",
+        "The device heats up too quickly.",
+        "Very stylish and modern look.",
+        "Instructions were poorly translated.",
+        "Exactly what I needed.",
+        "Product works well, but cable is too short.",
+        "Elegant design and very efficient.",
+        "Service was slow and unresponsive.",
+        "The quality is far better than I expected.",
+        "Not durable at all.",
+        "Great product, even better price.",
+        "I regret this purchase.",
+        "Lightweight and easy to carry.",
+        "Does not match the product description.",
+        "User-friendly and efficient.",
+        "Packaging was excellent and secure.",
+        "App integration is buggy.",
+        "Noisy motor but powerful output.",
+        "Reliable performance under daily use.",
+        "Arrived late and in poor condition.",
+        "Absolutely worth every penny.",
+        "Works better than more expensive alternatives.",
+        "Doesn’t live up to the hype.",
+        "Installation was straightforward.",
+        "Sleek and minimalistic design.",
+        "I encountered multiple issues using it.",
+        "It’s decent, but there are better options.",
+        "Very durable and rugged design.",
+        "Nothing special, just average.",
+        "Blown away by how well it works.",
+        "Not as pictured, a bit misleading.",
+        "Compact and efficient product.",
+        "Needed replacement within days.",
+        "Great for beginners and easy to learn.",
+        "Feels flimsy and unreliable.",
+        "I’ve recommended this to friends.",
+        "The screen quality is fantastic.",
+        "Very weak performance under stress.",
+        "Flawless functionality and good build.",
+        "Not suitable for my needs.",
+        "Everything works perfectly out of the box.",
+        "The product has exceeded all expectations.",
+        "Awful quality and poor finishing.",
+        "Simple, elegant, and works well.",
+        "Unimpressive performance overall.",
+        "A reliable product you can trust.",
+        "Expected more features for the price.",
+        "Superb product, will definitely reorder."
+      ];
+      
+      
+    
+    
+      const total_emails=[
+        "testuser@example.com",
+        "ayushi@gmail.com",
+        "p@gmail.com",
+        "anshu@gmail.com",
+        "sana@gmail.com",
+        "tanu@gmail.com",
+        "k@gmial.com",
+        "triveni@example.com",
+        "priya@example.com",
+        "vedant@example.com",
+        "raj@example.com",
+        "amit@example.com",
+        "atherv@example.com",
+        "rohit@example.com",
+        "sneha@example.com",
+        "akash@example.com",
+        "deepa@example.com",
+        "vikas@example.com",
+        "ananya@example.com",
+        "yash@example.com",
+        "shivani@example.com",
+        "manish@example.com",
+        "neha@example.com",
+        "karan@example.com",
+        "swati@example.com",
+        "ravi@example.com",
+        "mohit@example.com",
+        "pallavi@example.com",
+        "sachin@example.com",
+        "jyoti@example.com",
+        "rahul@example.com",
+        "sonal@example.com",
+        "gaurav@example.com",
+        "divya@example.com",
+        "naman@example.com",
+        "ishita@example.com",
+        "shubham@example.com",
+        "radhika@example.com",
+        "harsh@example.com"
+      ]
+    // Send all requests in parallel
+    await Promise.all(total_reviews.map((ele, index) => {
+        const email = total_emails[index % total_emails.length];
+
+        return fetch("http://localhost:3000/add-review", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, review: ele })  // Changed 'ele' to 'review'
+        })
+        .then(response => response.json())
+        .then(data => console.log(`Review ${index + 1} submitted:`, data.message))
+        .catch(error => console.error(`Error submitting review ${index + 1}:`, error));
+    }));
+
+    console.log("All reviews submitted successfully!");
+};
+
+// Call function to start sending reviews
+sendReviews();
