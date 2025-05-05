@@ -18,7 +18,7 @@ loginBtn1.addEventListener('click', () => {
 
 
 
-// Fetch accounts from accounts.json
+
 let accounts = [];
 fetch('/backend/accounts.json')
     .then(response => response.json())
@@ -62,7 +62,7 @@ registerBtn.addEventListener('click', () => {
         }
     });
 
-// Event listener for Sign In
+
 loginBtn.addEventListener('click', () => {
 
 
@@ -77,16 +77,16 @@ loginBtn.addEventListener('click', () => {
         updateNavbar();
         console.log(`Login successful: Welcome, ${user.username}!`);
         event.preventDefault();
-        // Redirect to index.html
+        
         window.location.href = "index.html";
 
-        // Redirect to another page or display user dashboard here
+       
     } else {
         console.log('Invalid email or password.');
         alert('Invalid email or password. Please try again.');
     }
 
-    container.classList.remove("active"); // Switch to Sign Up
+    container.classList.remove("active"); 
 });
 
 
@@ -95,9 +95,9 @@ loginBtn.addEventListener('click', () => {
 function updateNavbar() {
     let iconDiv = document.querySelector(".icon");
     
-    // Check user login status
+    
     if (sessionStorage.getItem("userLoggedIn") === "true") {
-      // Create wishlist icon
+      
       let wishlink = document.createElement("a");
       wishlink.href = "wishlist.html";
 
@@ -106,8 +106,7 @@ function updateNavbar() {
       wishlistIcon.style.fontSize = "24px";
       wishlink.appendChild(wishlistIcon);
   
-      // Create shopping bag icon
-
+    
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
@@ -116,7 +115,7 @@ function updateNavbar() {
       shoppingBagIcon.style.fontSize = "24px";
       bagIcon.appendChild(shoppingBagIcon)
   
-      // Create logout button
+      
       let logoutButton = document.createElement("button");
       logoutButton.setAttribute("id", "ayushi");
       logoutButton.textContent = "Logout";
@@ -128,14 +127,14 @@ function updateNavbar() {
       logoutButton.style.color = "white";
       logoutButton.style.cursor = "pointer";
   
-      // Append user-related icons
+      
       iconDiv.appendChild(wishlink);
       iconDiv.appendChild(bagIcon);
       iconDiv.appendChild(logoutButton);
   
-      // Add event listener to logout button
+      
       logoutButton.addEventListener("click", function() {
-        // Remove wishlist and shopping bag icons
+        
         if (wishlink && bagIcon) {
           iconDiv.removeChild(wishlink);
           iconDiv.removeChild(bagIcon);

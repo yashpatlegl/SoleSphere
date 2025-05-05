@@ -24,14 +24,14 @@ function fetchCartItem() {
       count.innerHTML=`TOTAL ITEMS: ${Object.keys(data.cartItems).length}`;
 
       wishlistContainer.innerHTML = "";
-      let totalBill = 0; // Initialize total bill
+      let totalBill = 0; 
 
       if (data.cartItems && data.cartItems.length > 0) {
         data.cartItems.forEach((details, index) => {
           const boxItem = document.createElement("div");
           boxItem.className = "box";
 
-          // Shoe Image
+          
           const photoItem = document.createElement("div");
           photoItem.className = "photo";
           photoItem.style.width = "30%";
@@ -40,7 +40,7 @@ function fetchCartItem() {
           photoItem.style.backgroundImage = `url('images/${details.image_path}')`;
           photoItem.style.backgroundSize = "cover";
 
-          // Item Details
+     
           const itemElement = document.createElement("div");
           itemElement.style.borderRadius="1rem";
           itemElement.className = "information";
@@ -74,7 +74,7 @@ function fetchCartItem() {
 
         
 
-        // Create Total Bill Section
+       
         bill1.innerHTML = "";
         const totalBillElement = document.createElement("div");
         totalBillElement.innerHTML = `
@@ -83,21 +83,21 @@ function fetchCartItem() {
                 `;
         bill1.appendChild(totalBillElement);
 
-        // Add event listener to quantity dropdowns
+        
         document.querySelectorAll(".quantity-selector").forEach((select) => {
           select.addEventListener("change", updateTotalBill);
         });
         totalBill.innerHTML = `${data.totalBill}`;
 
         function updateTotalBill() {
-          totalBill = 0; // Reset total bill
+          totalBill = 0; 
           document.querySelectorAll(".quantity-selector").forEach((select) => {
             const quantity = parseInt(select.value);
             const price = parseFloat(select.getAttribute("data-price"));
             totalBill += quantity * price;
           });
 
-          // Update displayed total bill
+          
           document.getElementById(
             "total-bill"
           ).innerText = `Your Grand Total is: $${totalBill}`;
@@ -140,7 +140,7 @@ function fetchCartItem() {
 document.getElementById("toggleTheme").addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
 
-  // Save preference in localStorage
+  
   if (document.body.classList.contains("dark-theme")) {
       localStorage.setItem("theme", "dark");
   } else {
@@ -148,7 +148,7 @@ document.getElementById("toggleTheme").addEventListener("click", function () {
   }
 });
 
-// Apply saved theme when page loads
+
 window.addEventListener("load", function () {
   if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-theme");
@@ -193,5 +193,5 @@ function removeCart(email, model) {
 }
 
 
-// Load items when the page is ready
+
 document.addEventListener("DOMContentLoaded", fetchCartItem);

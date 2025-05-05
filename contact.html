@@ -102,7 +102,7 @@
     transition: 0.3s ease-in-out;
 }
 
-/* Dark mode */
+
 .dark-theme {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -177,7 +177,7 @@
         document.getElementById("toggleTheme").addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
 
-  // Save preference in localStorage
+ 
   if (document.body.classList.contains("dark-theme")) {
       localStorage.setItem("theme", "dark");
   } else {
@@ -185,7 +185,7 @@
   }
 });
 
-// Apply saved theme when page loads
+
 window.addEventListener("load", function () {
   if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-theme");

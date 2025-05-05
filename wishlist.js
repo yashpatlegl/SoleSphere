@@ -130,7 +130,6 @@ function removewishlist(email, model) {
     .then((data) => {
       console.log("Server response:", data);
       if (data.success) {
-        // itemToRemove.remove(); // Remove item from UI
         alert("Item successfully removed from wishlist!");
       } else {
         alert("Failed to remove item.");
@@ -145,7 +144,7 @@ function removewishlist(email, model) {
 document.getElementById("toggleTheme").addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
 
-  // Save preference in localStorage
+  
   if (document.body.classList.contains("dark-theme")) {
       localStorage.setItem("theme", "dark");
   } else {
@@ -153,7 +152,7 @@ document.getElementById("toggleTheme").addEventListener("click", function () {
   }
 });
 
-// Apply saved theme when page loads
+
 window.addEventListener("load", function () {
   if (localStorage.getItem("theme") === "dark") {
       document.body.classList.add("dark-theme");
@@ -163,7 +162,5 @@ window.addEventListener("load", function () {
   }
 });
 
-// Example function to handle adding to cart
 
-// Call fetchWishlist on page load
 document.addEventListener("DOMContentLoaded", fetchWishlist);

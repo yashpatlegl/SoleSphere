@@ -1,7 +1,5 @@
     document.addEventListener("DOMContentLoaded", () => {
         const shoeContainer = document.getElementById("shoe-container");
-    
-        // Fetch data from shoes.json
         fetch("shoes.json")
             .then(response => response.json())
             .then(data => {
@@ -21,7 +19,6 @@
     function displayShoes(shoes) {
         const shoeContainer = document.getElementById("shoe-container");
         shoeContainer.innerHTML = "";
-        // shoeContainer.style.gap = "0.5rem";
         
         shoes.forEach(shoe => {
             const shoeDiv = document.createElement("div");
@@ -36,12 +33,13 @@
             shoeDiv.style.borderRadius = "2rem";
             shoeDiv.style.transition = "transform 0.3s ease-in-out";
             shoeDiv.style.position = "relative"; 
+            // shoeDiv.style.display="none";
         
-            // Hover Effect - Scale on Hover
+            
             shoeDiv.addEventListener("mouseover", () => {
                 shoeDiv.style.transform = "scale(1.1)";
                 shoeText.style.display = "block";
-                wishButtonDiv.style.display="block"; // Show text on hover
+                wishButtonDiv.style.display="block"; 
                 shoeDiv.style.backgroundColor = "#F1F0E8";
                 CartButtonDiv.style.display="block";
                 quickView.style.display="block";
@@ -50,7 +48,7 @@
             shoeDiv.addEventListener("mouseout", () => {
                 shoeDiv.style.transform = "scale(1)";
                 shoeText.style.display = "none"; 
-                wishButtonDiv.style.display="none"// Hide text when not hovering
+                wishButtonDiv.style.display="none"
                 shoeDiv.style.backgroundColor="white";
                 CartButtonDiv.style.display="none";
                 quickView.style.display="none";
@@ -61,7 +59,7 @@
 
 
         
-            // Shoe Image
+    
             const shoeImage = document.createElement("div");
             shoeImage.classList.add("card");
             shoeImage.style.borderRadius = "2rem";
@@ -130,6 +128,7 @@
                
                 
                 `;
+                shoeText.style.display="none";
             shoeDescription = document.createElement("div");
             // shoeDescription.innerHTML=`<strong>${shoe.description} </strong>` ;
             // shoeDescription.display="none";   
@@ -142,27 +141,13 @@
             shoeContainer.appendChild(shoeDiv);
         });
         
-        // Wishlist button functionality
+        
         document.querySelectorAll(".wishlist-btn").forEach(button => {
             button.addEventListener("click", function() {
                 const model = this.getAttribute("data-model");
                 addToWishlist(model);
             });
         });
-
-
-        // document.querySelectorAll(".quick-view-button").forEach(button=>
-        // {
-        //     button.addEventListener("click", function(){
-        //         let view = document.createElement("div");
-        //         const model = this.getAttribute("data-model");
-        //         const description = shoes.fil
-                
-        //         view.innerHTML=`<strong>${description} </strong>`;
-        //         shoeDiv.appendChild(view);
-        //     })
-        // }
-        // )
 
 
 
@@ -180,7 +165,7 @@
         document.getElementById("toggleTheme").addEventListener("click", function () {
             document.body.classList.toggle("dark-theme");
         
-            // Save preference in localStorage
+            
             if (document.body.classList.contains("dark-theme")) {
                 localStorage.setItem("theme", "dark");
             } else {
@@ -188,7 +173,7 @@
             }
         });
         
-        // Apply saved theme when page loads
+        
         window.addEventListener("load", function () {
             if (localStorage.getItem("theme") === "dark") {
                 document.body.classList.add("dark-theme");
@@ -203,12 +188,7 @@
         window.setTimeout(()=>
         {
             alert("You can also switch to light mode to reduce eye strain 💻");
-        }, 5000);
-
-
-        
-        
-        
+        }, 12000);  
         
     });
 

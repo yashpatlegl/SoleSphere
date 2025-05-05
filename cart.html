@@ -52,9 +52,9 @@
       function updateNavbar() {
     let iconDiv = document.querySelector(".icon");
     
-    // Check user login status
+    
     if (sessionStorage.getItem("userLoggedIn") === "true") {
-      // Create wishlist icon
+      
       let wishlink = document.createElement("a");
       wishlink.href = "wishlist.html";
 
@@ -63,7 +63,7 @@
       wishlistIcon.style.fontSize = "24px";
       wishlink.appendChild(wishlistIcon);
   
-      // Create shopping bag icon
+      
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
@@ -72,7 +72,7 @@
       shoppingBagIcon.style.fontSize = "24px";
       bagIcon.appendChild(shoppingBagIcon);
   
-      // Create logout button
+     
       let logoutButton = document.createElement("button");
       logoutButton.setAttribute("id", "ayushi");
       logoutButton.textContent = "Logout";
@@ -83,14 +83,14 @@
       logoutButton.style.color = "white";
       logoutButton.style.cursor = "pointer";
   
-      // Append user-related icons
+      
       iconDiv.appendChild(wishlink);
-    //   iconDiv.appendChild(shoppingBagIcon);
+    
       iconDiv.appendChild(bagIcon);
   
-      // Add event listener to logout button
+      
       logoutButton.addEventListener("click", function() {
-        // Remove wishlist and shopping bag icons
+        
         if (wishlistIcon && shoppingBagIcon) {
           iconDiv.removeChild(wishlistIcon);
           iconDiv.removeChild(shoppingBagIcon);

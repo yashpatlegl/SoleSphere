@@ -1,34 +1,33 @@
 
-// Navbar update function for user login/logout
 function updateNavbar() {
     let iconDiv = document.querySelector(".icon");
     
-    // Check user login status
+    
     if (sessionStorage.getItem("userLoggedIn") === "true") {
-      // Create wishlist icon
+      
       let wishlink = document.createElement("a");
       wishlink.href = "wishlist.html";
 
-// Get the logged-in user's email from sessionStorage
-let userEmail = sessionStorage.getItem("email"); // Ensure this is stored during login
 
-// Fetch the wishlist data from wishlist.json
+let userEmail = sessionStorage.getItem("email"); 
+
+
 fetch("backend/wishlist.json")
-  .then(response => response.json()) // Convert response to JSON
+  .then(response => response.json())
   .then(wishlistData => {
-    // Retrieve the array for this user and get its length
+    
     let wishlistCountValue = wishlistData[userEmail] ? wishlistData[userEmail].length : 0;
     wishlink.style.position = "relative";
     wishlink.style.display = "inline-block";
 
-    // Create wishlist heart icon
+    
     let wishlistIcon = document.createElement("i");
     wishlistIcon.className = "fa fa-heart";
     wishlistIcon.style.fontSize = "24px";
 
-    // Create the wishlist count badge
+    
     let wishlistCount = document.createElement("span");
-    wishlistCount.innerText = wishlistCountValue; // Set wishlist count dynamically
+    wishlistCount.innerText = wishlistCountValue;
     wishlistCount.style.position = "absolute";
     wishlistCount.style.top = "-5px";
     wishlistCount.style.right = "-10px";
@@ -39,46 +38,36 @@ fetch("backend/wishlist.json")
     wishlistCount.style.fontSize = "12px";
     wishlistCount.style.fontWeight = "bold";
 
-    // Append elements
+    
     wishlink.appendChild(wishlistIcon);
     wishlink.appendChild(wishlistCount);
-    // wishlink.appendChild(wishlink); // Append to the page
+    // wishlink.appendChild(wishlink);
   })
   .catch(error => console.error("Error loading wishlist.json:", error));
-
-
-
-
-
-
-
-    
-  
-      // Create shopping bag icon
 
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
  
 fetch("backend/cart.json")
-  .then(response => response.json()) // Convert response to JSON
+  .then(response => response.json())
   .then(cartData => {
-    // Retrieve the array for this user and get its length
+    
     let itemCountValue = cartData[userEmail] ? cartData[userEmail].length : 0;
 
-    // Create shopping bag icon wrapper
+    
     let bagIconWrapper = document.createElement("div");
     bagIconWrapper.style.position = "relative";
     bagIconWrapper.style.display = "inline-block";
 
-    // Create shopping bag icon
+    
     let shoppingBagIcon = document.createElement("i");
     shoppingBagIcon.className = "fa fa-shopping-bag";
     shoppingBagIcon.style.fontSize = "24px";
 
-    // Create the number badge
+    
     let itemCount = document.createElement("span");
-    itemCount.innerText = itemCountValue; // Set cart count dynamically
+    itemCount.innerText = itemCountValue; 
     itemCount.style.position = "absolute";
     itemCount.style.top = "-5px";
     itemCount.style.right = "-10px";
@@ -89,7 +78,7 @@ fetch("backend/cart.json")
     itemCount.style.fontSize = "12px";
     itemCount.style.fontWeight = "bold";
 
-    // Append elements
+    
     bagIconWrapper.appendChild(shoppingBagIcon);
     bagIconWrapper.appendChild(itemCount);
     bagIcon.appendChild(bagIconWrapper);
@@ -100,7 +89,7 @@ fetch("backend/cart.json")
 
 
 
-      // Create logout button
+      
       let logoutButton = document.createElement("button");
       logoutButton.setAttribute("id", "ayushi");
       logoutButton.textContent = "Logout";
@@ -115,14 +104,14 @@ fetch("backend/cart.json")
       if (loginLink) {
           loginLink.remove();
       }
-      // Append user-related icons
+      
       iconDiv.appendChild(wishlink);
       iconDiv.appendChild(bagIcon);
       iconDiv.appendChild(logoutButton);
   
-      // Add event listener to logout button
+      
       logoutButton.addEventListener("click", function() {
-        // Remove wishlist and shopping bag icons
+        
         if (wishlink && bagIcon) {
           iconDiv.removeChild(wishlink);
           iconDiv.removeChild(bagIcon);
@@ -188,5 +177,4 @@ fetch("backend/cart.json")
     alert(data.message);
   }
   
-  // Initialize navbar on page load
 window.onload = updateNavbar;
