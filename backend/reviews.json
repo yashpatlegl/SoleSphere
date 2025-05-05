@@ -418,6 +418,32 @@
         "positive": [],
         "negative": []
       }
+    },
+    {
+      "review": "that product was awesome",
+      "timestamp": "2025-05-05T09:32:23.989Z",
+      "sentimentAnalysis": {
+        "score": 4,
+        "comparative": 1,
+        "calculation": [
+          {
+            "awesome": 4
+          }
+        ],
+        "tokens": [
+          "that",
+          "product",
+          "was",
+          "awesome"
+        ],
+        "words": [
+          "awesome"
+        ],
+        "positive": [
+          "awesome"
+        ],
+        "negative": []
+      }
     }
   ],
   "tanu@gmail.com": [

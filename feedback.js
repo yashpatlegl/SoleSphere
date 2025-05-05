@@ -79,3 +79,21 @@ document.getElementById("submit-button").addEventListener("click", function(even
     })
     .catch(error => console.error("Error submitting review:", error));
 });
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.createElement("div");
+    container.classList.add("background-elements");
+    document.body.appendChild(container);
+  
+    for (let i = 0; i < 10; i++) {
+      let shape = document.createElement("div");
+      shape.classList.add("shape");
+      shape.style.left = `${Math.random() * 100}vw`;
+      shape.style.top = `${Math.random() * 100}vh`;
+      shape.style.animationDuration = `${2 + Math.random() * 3}s`;
+      container.appendChild(shape);
+    }
+  });
+  
