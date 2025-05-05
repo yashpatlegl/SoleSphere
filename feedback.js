@@ -15,3 +15,40 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
             
                 };
             });
+
+            document.getElementById("toggleTheme").addEventListener("click", function () {
+                document.body.classList.toggle("dark-theme");
+              
+                
+                if (document.body.classList.contains("dark-theme")) {
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    localStorage.setItem("theme", "light");
+                }
+              });
+              
+              
+              window.addEventListener("load", function () {
+                if (localStorage.getItem("theme") === "dark") {
+                    document.body.classList.add("dark-theme");
+                    // this.document.getElementById("toggleTheme").style.color="white";
+                    const ii = this.document.getElementById("#toggleTheme");
+                    ii.style.color="black";
+                }
+              });
+              
+              
+              const micButton = document.getElementById("speech");
+
+              // Function to simulate mic activation
+              function toggleMic() {
+                micButton.classList.toggle("mic-active");
+              
+                // Simulate mic activity duration (for example, 5 seconds)
+                setTimeout(() => {
+                  micButton.classList.remove("mic-active");
+                }, 5000);
+              }
+              
+              micButton.addEventListener("click", toggleMic);
+              

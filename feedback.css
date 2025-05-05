@@ -85,6 +85,39 @@ ul{
     transform: scale(1.4);
 }
 
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: 0.3s ease-in-out;
+}
+
+/* Dark mode */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+#toggleTheme{
+    transition: transform 0.3s ease-in-out;
+    color: black;
+}
+
+#toggleTheme:hover{
+    transform: scale(1.5);
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  .emoji-face:hover {
+    animation: bounce 0.5s ease-in-out infinite;
+  }
+  
+
+
 
 .box{
     margin: 6rem;
@@ -202,6 +235,12 @@ i:hover{
 
     
 }
+
+.mic-active {
+    background-color: rgb(40, 147, 235);
+    color: white;
+  }
+  
 
 .emoji-face:hover{
     transform: scale(1.2);
