@@ -1,31 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <div class="loader">
-      <h1>Loading<span>....</span></h1>
-    </div>
-    <div class="page-content index-page">
-      <div class="sidebar">
-        <div class="brand">
-          <i class="fa-solid fa-xmark xmark"></i>
-          <h3 class="brand-name">Zana</h3>
-        </div>
-        <ul>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .bar-chart-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+      overflow-x: auto;
+      padding: 20px;
+      height: 300px;
+
+      background: #fff;
+      border-radius: 10px;
+
+    }
+
+    .bar {
+      flex: 0 0 auto;
+      width: 40px;
+      background: linear-gradient(145deg, #74d185, #1abe5e);
+      position: relative;
+      border-radius: 6px 6px 0 0;
+      transition: height 0.5s ease;
+      cursor: pointer;
+    }
+
+    .bar::after {
+      content: attr(data-day);
+      position: absolute;
+      bottom: -20px;
+      width: 100%;
+      font-size: 12px;
+      color: #444;
+      text-align: center;
+    }
+
+    .tooltip {
+      position: absolute;
+      padding: 8px 10px;
+      background: #222;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -10px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+      z-index: 10;
+    }
+  </style>
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <div class="loader">
+    <h1>Loading<span>....</span></h1>
+  </div>
+  <div class="page-content index-page">
+    <div class="sidebar">
+      <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;"><span
+          style="color: rgb(12, 144, 211);font-family: Georgia, 'Times New Roman', Times, serif;">S</span>oleSphere</h1>
+
+      <div class="brand" style="display: none;">
+        <i class="fa-solid fa-xmark xmark" style="display: none;"></i>
+        <h3 class="brand-name"></h3>
+        <h2>hj</h2>
+      </div>
+      <!-- <ul>
           <li>
             <a href="index.html" class="sidebar-link">
               <i class="fa-regular fa-chart-bar fa-fw"></i>
@@ -78,156 +130,109 @@
               <i class="fa-regular fa-credit-card fa-fw"></i><span>Plans</span>
             </a>
           </li>
-        </ul>
-      </div>
-      <main>
-        <div class="header">
-          <i class="fa-solid fa-bars bar-item"></i>
-          <div class="search">
-            <input type="search" placeholder="Type A Keyword" />
-          </div>
-
-          <div class="profile">
-            <span class="bell"><i class="fa-regular fa-bell fa-lg"></i></span>
-
-            <img src="./images/avatar.png" alt="No Image" />
-          </div>
+        </ul> -->
+    </div>
+    <main>
+      <div class="header">
+        <i class="fa-solid fa-bars bar-item"></i>
+        <div class="search">
+          <input type="search" placeholder="Type A Keyword" />
         </div>
-        <div class="main-content">
-          <div class="title">
-            <h1>Dashboard</h1>
+
+        <div class="profile">
+          <span class="bell"><i class="fa-regular fa-bell fa-lg"></i></span>
+
+          <img src="./images/avatar.png" alt="No Image" />
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="title">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="main-content-boxes">
+          <div class="box first-box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Welcome</h2>
+
+
+              </div>
+              <div class="box-image">
+                <img src="./images/welcome.png" alt="No image" />
+              </div>
+              <img src="https://yashpatle23.github.io/static/media/matt.dac6c8f6c011d996c542.png" alt="No image"
+                class="avatar" />
+            </div>
+            <div class="box-section2">
+              <ul>
+                <li>
+                  <span>Admin Yash </span>
+                </li>
+                <li>
+                  <span>Band X</span>
+                </li>
+                <li>
+                  <span>GlobalLogic</span>
+                </li>
+              </ul>
+            </div>
+
           </div>
-          <div class="main-content-boxes">
-            <div class="box first-box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Welcome</h2>
-                  <p>Zana</p>
-                </div>
-                <div class="box-image">
-                  <img src="./images/welcome.png" alt="No image" />
-                </div>
-                <img src="./images/avatar.png" alt="No image" class="avatar" />
-              </div>
-              <div class="box-section2">
-                <ul>
-                  <li>
-                    <span>Zana Suleiman</span>
-                    <p>Developer</p>
-                  </li>
-                  <li>
-                    <span>80</span>
-                    <p>Projects</p>
-                  </li>
-                  <li>
-                    <span>$8500</span>
-                    <p>Earned</p>
-                  </li>
-                </ul>
-              </div>
-              <a href="./pages/Profile.html">Profile </a>
-            </div>
 
-            <div class="box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Pie Chart</h2>
-                  <p>Write A Draft For Your Ideas</p>
-                </div>
-              </div>
-              <canvas id="myPieChart"></canvas>
-            </div>
-
-            <div class="box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Yearly Targets</h2>
-                  <p>Targets Of The Year</p>
-                </div>
-              </div>
-              <div class="third-box-section2">
-                <div class="third-box-section2-details">
-                  <div class="icon">
-                    <i class="fa-solid fa-dollar-sign fa-lg"></i>
-                  </div>
-                  <div class="third-box-info">
-                    <ul>
-                      <li>Money</li>
-                      <li>$20.000</li>
-                      <li>
-                        <span><span class="tipTop">80%</span></span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="third-box-section2-details">
-                  <div class="icon">
-                    <i class="fa-solid fa-code fa-lg"></i>
-                  </div>
-                  <div class="third-box-info">
-                    <ul>
-                      <li>Projects</li>
-                      <li>24</li>
-                      <li>
-                        <span><span class="tipTop">55%</span></span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="third-box-section2-details">
-                  <div class="icon">
-                    <i class="fa-solid fa-user fa-lg"></i>
-                  </div>
-                  <div class="third-box-info">
-                    <ul>
-                      <li>Team</li>
-                      <li>12</li>
-                      <li>
-                        <span><span class="tipTop">75%</span></span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          <div class="box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Pie Chart</h2>
               </div>
             </div>
+            <canvas id="myPieChart"></canvas>
+          </div>
 
-            <div class="box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Average Sentimental Score</h2>
-                  
-                </div>
-              </div>
-              <div class="fourth-box-section2">
-                <div class="small-box">
-                  <i class="fa-regular fa-rectangle-list fa-2x mb-10"></i>
-                  <span id="avgsen">2500</span>
-                  <p>Avg Sentimental Score</p>
-                </div>
 
-                <div class="small-box">
-                  <i class="fa-solid fa-spinner fa-2x mb-10"></i>
-                  <span id="avgpos">500</span>
-                  <p>Avg Positive Score</p>
-                </div>
-
-                <div class="small-box">
-                  <i class="fa-regular fa-circle-check fa-2x mb-10"></i>
-                  <span id="avgneg">1900</span>
-                  <p>Avg Negative Score</p>
-                </div>
-
-                <div class="small-box">
-                  <i class="fa-regular fa-rectangle-xmark fa-2x mb-10"></i>
-                  <span id="avgnu">100</span>
-                  <p>Avg Neutral Score</p>
-                </div>
+          <!-- vdeant code here -->
+          <div class="box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Tickets Statistics</h2>
               </div>
             </div>
+            <div class="bar-chart-container" id="barChart"></div>
+            <div id="tooltip" class="tooltip"></div>
+          </div>
+          <div class="box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Average Sentimental Score</h2>
 
-            <!-- <div class="box">
+              </div>
+            </div>
+            <div class="fourth-box-section2">
+              <div class="small-box">
+                <i class="fa-regular fa-rectangle-list fa-2x mb-10"></i>
+                <span id="avgsen">2500</span>
+              </div>
+
+              <div class="small-box">
+                <i class="fa-solid fa-spinner fa-2x mb-10"></i>
+                <span id="avgpos">500</span>
+                <p>Avg Positive Score</p>
+              </div>
+
+              <div class="small-box">
+                <i class="fa-regular fa-circle-check fa-2x mb-10"></i>
+                <span id="avgneg">1900</span>
+                <p>Avg Negative Score</p>
+              </div>
+
+              <div class="small-box">
+                <i class="fa-regular fa-rectangle-xmark fa-2x mb-10"></i>
+                <span id="avgnu">100</span>
+                <p>Avg Neutral Score</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Latest News</h2>
@@ -269,83 +274,75 @@
                 <span>9 Days Ago</span>
               </div>
             </div> -->
-            <div class="box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Latest Tasks</h2>
-                </div>
-              </div>
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Record One New Video</h4>
-                  <p>Record Python Create Exe Project</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
-              </div>
-
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Write Article</h4>
-                  <p>Write Low Level vs High Level Languages</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
-              </div>
-
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Finish Project</h4>
-                  <p>Publish Academy Programming Project</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
-              </div>
-
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Finish Lesson</h4>
-                  <p>Finish Teaching Flex Box</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
+          <div class="box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Recent User's Review</h2>
               </div>
             </div>
-            <div class="box">
-              <div class="box-section1">
-                <div class="box-title">
-                  <h2>Latest Tasks</h2>
-                </div>
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Record One New Video</h4>
               </div>
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Record One New Video</h4>
-                  <p>Record Python Create Exe Project</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
-              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
 
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Write Article</h4>
-                  <p>Write Low Level vs High Level Languages</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Write Article</h4>
               </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
 
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Finish Project</h4>
-                  <p>Publish Academy Programming Project</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Finish Project</h4>
               </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
 
-              <div class="latest-tasks-section2">
-                <div class="latest-tasks-section2-info">
-                  <h4>Finish Lesson</h4>
-                  <p>Finish Teaching Flex Box</p>
-                </div>
-                <i class="fa-regular fa-trash-can"></i>
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Finish Lesson</h4>
+              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <div class="box">
+            <div class="box-section1">
+              <div class="box-title">
+                <h2>Recent User's Review</h2>
               </div>
             </div>
-            <div class="box">
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Record One New Video</h4>
+              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Write Article</h4>
+              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Finish Project</h4>
+              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+
+            <div class="latest-tasks-section2">
+              <div class="latest-tasks-section2-info">
+                <h4>Finish Lesson</h4>
+              </div>
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+          </div>
+          <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Top Search Items</h2>
@@ -355,35 +352,35 @@
                 <div class="top-search-items-info">
                   <p>Keyword</p>
                   <p>Search Count</p>
-                </div>
+                </div> -->
 
-                <div class="top-search-items-info">
+          <!-- <div class="top-search-items-info">
                   <h4>Programming</h4>
                   <span>220</span>
-                </div>
-                <div class="top-search-items-info">
+                </div> -->
+          <!-- <div class="top-search-items-info">
                   <h4>JavaScript</h4>
                   <span>180</span>
-                </div>
-                <div class="top-search-items-info">
+                </div> -->
+          <!-- <div class="top-search-items-info">
                   <h4>PHP</h4>
                   <span>160</span>
-                </div>
-                <div class="top-search-items-info">
+                </div> -->
+          <!-- <div class="top-search-items-info">
                   <h4>Code</h4>
                   <span>145</span>
-                </div>
-                <div class="top-search-items-info">
+                </div> -->
+          <!-- <div class="top-search-items-info">
                   <h4>Design</h4>
                   <span>110</span>
-                </div>
-                <div class="top-search-items-info">
+                </div> -->
+          <!-- <div class="top-search-items-info">
                   <h4>Logic</h4>
                   <span>95</span>
-                </div>
-              </div>
-            </div>
-            <div class="box">
+                </div> -->
+        </div>
+      </div>
+      <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Latest Uploads</h2>
@@ -466,8 +463,8 @@
                 </div>
                 <span>8.9MB</span>
               </div>
-            </div>
-            <div class="box">
+            </div> -->
+      <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Last Project Progress</h2>
@@ -485,8 +482,8 @@
                 </div>
                 <img src="./images/project.png" alt="" />
               </div>
-            </div>
-            <div class="box">
+            </div> -->
+      <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Reminders</h2>
@@ -510,8 +507,8 @@
                   <p>20/12/2022 - 12:00am</p>
                 </div>
               </div>
-            </div>
-            <div class="box">
+            </div> -->
+      <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Latest Post</h2>
@@ -543,8 +540,8 @@
                   </ul>
                 </div>
               </div>
-            </div>
-            <div class="box">
+            </div> -->
+      <!-- <div class="box">
               <div class="box-section1">
                 <div class="box-title">
                   <h2>Social Media Stats</h2>
@@ -591,16 +588,16 @@
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="projects-box">
-          <div class="box-section1">
+            </div> -->
+  </div>
+  </div>
+  <div class="projects-box">
+    <!-- <div class="box-section1">
             <div class="box-title">
               <h2>Projects</h2>
             </div>
-          </div>
-          <div class="projects-box-section2">
+          </div> -->
+    <!-- <div class="projects-box-section2">
             <table>
               <thead>
                 <tr>
@@ -686,14 +683,72 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-      </main>
-    </div>
-    <script src="scrrr.js">
+          </div> -->
+  </div>
+  </main>
+  </div>
+  <script src="scrrr.js">
 
 
-    </script>
-    <script src="./js/script.js"></script>
-  </body>
+  </script>
+  <!-- <script src=""></script> -->
+  <script src="./js/script.js"></script>
+  <script>
+
+    //     
+    fetch("/backend/reviews.json")
+    .then((res) => {
+      return res.json()
+    })
+    .then((data) => {
+      let dataFromBackend = {};
+      Object.values(data).forEach((ele) => {
+        ele.forEach((ff) => {
+          ff.timestamp = ff.timestamp.split("T")[0];
+          if (dataFromBackend[ff.timestamp]) dataFromBackend[ff.timestamp]++;
+          else dataFromBackend[ff.timestamp] = 1;
+          //    dataFromBacken=[...dataFromBacken,{"date":ff.timestamp }]
+
+        })
+      })
+
+      let array = Object.entries(dataFromBackend);
+      console.log(dataFromBackend)
+      const chart = document.getElementById('barChart');
+      const tooltip = document.getElementById('tooltip');
+
+      const maxValue = Math.max(...array.map(d => d[1]));
+      console.log("y");
+      array.forEach(entry => {
+
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.dataset.value = entry[1] * 10;
+        bar.dataset.day = entry[0];
+        bar.style.height = '0%'; // animate from 0
+
+        bar.addEventListener('mouseenter', (e) => {
+          tooltip.innerText = `${entry[0]}: ${entry[1]} responses`;
+          tooltip.style.opacity = 1;
+        });
+
+        bar.addEventListener('mousemove', (e) => {
+          tooltip.style.left = e.pageX + 'px';
+          tooltip.style.top = e.pageY - 40 + 'px';
+        });
+
+        bar.addEventListener('mouseleave', () => {
+          tooltip.style.opacity = 0;
+        });
+
+        chart.appendChild(bar);
+
+        setTimeout(() => {
+          bar.style.height = `${(entry[1] / maxValue) * 100}%`;
+        }, 100);
+      });
+    });
+  </script>
+</body>
+
 </html>
