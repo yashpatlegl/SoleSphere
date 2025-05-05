@@ -5,10 +5,11 @@ function addToCart(model) {
 
   const email = sessionStorage.getItem("email");
   if (!email || !model) {
-    alert("Both email and model fields are required.");
+    alert("Please sign in to add you favourites in your list❤️");
     return;
   }
-  //   alert("Item Added to Cart!!");
+    alert("Item Added to Cart!!");
+    event.preventDefault();
 
   const response = fetch("http://localhost:3000/add-to-cart", {
     method: "POST",
@@ -52,17 +53,19 @@ function fetchWishlist() {
           photoitem.className = "photo";
           photoitem.style.width = "15rem";
           photoitem.style.height = "15rem";
+          photoitem.style.borderRadius="1rem";
           photoitem.style.backgroundImage = `url('images/${details.image_path}')`;
           photoitem.style.backgroundSize = "cover";
+          itemElement.style.borderRadius="1rem";
 
           itemElement.className = "information";
           itemElement.innerHTML = `
-          <p style="font-size:1.5rem class="model-name"><strong style="font-size:1.5rem">Brand: ${
-            details.brand
-          }</strong></p>
+          <p class="model-name" style="font-size:1.5rem;">
+          <strong style="font-size:1.5rem">Brand: 
+          ${details.brand}</strong></p>
 
-          <p style="font-size:1.5rem class="model-name"><strong style="font-size:1.5rem">Model :${
-                          details.model
+          <p class="model-name"><strong style="font-size:1.5rem; font-style:Times New Roman">Model :${
+            details.model
           }</strong></p>
                         <p style="font-size:1.5rem"><strong>Price: $${
                           details.price
@@ -74,7 +77,9 @@ function fetchWishlist() {
     onclick="addToCart('${details.model.replace(/'/g, `\\'`)}')">
     ADD TO CART
 </button>
-<button class="trash"><i class="fa fa-trash" aria-hidden="true" style="font-size:1.5rem" onclick="removewishlist('${email}','${details.model}')"></i></button></div>
+<button class="trash"><i class="fa fa-trash" aria-hidden="true" style="font-size:1.5rem" onclick="removewishlist('${email}','${
+            details.model
+          }')"></i></button></div>
 `;
 
           boxiteam.appendChild(photoitem);
@@ -84,7 +89,7 @@ function fetchWishlist() {
         });
       } else {
         wishlistContainer.innerHTML =
-          "<p>No wishlist found for this email.</p>";
+          "<p><i>Your Wish List is Empty!!!🗒️</i></p><br><p>Go and grab your favourites in your list before the deal ends 🕰️</p>";
       }
       // document.querySelectorAll(".button-43").forEach((button) => {
       //   button.addEventListener("click", function () {
@@ -99,49 +104,64 @@ function fetchWishlist() {
         "<p>Something went wrong. Please try again later.</p>";
     });
 
-  // document.getElementsByClassName("astrash").forEach((button) => {
-  //   button.addEventListener("click", function () {
-      
-  //   });
-  // });
+  
 }
 
-function removewishlist(email,model){
+function removewishlist(email, model) {
   // let itemToRemove = this.closest(".box");
-    
-      // const email = this.email;
-    console.log(model);
-      if (!email || !model) {
-        alert("Invalid session or item.");
-        return;
+
+  // const email = this.email;
+  console.log(model);
+  if (!email || !model) {
+    alert("Invalid session or item.");
+    return;
+  }
+
+  console.log(`Sending DELETE request for model: ${model}, email: ${email}`);
+
+  fetch("http://localhost:3000/remove-from-wishlist", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, model }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Server response:", data);
+      if (data.success) {
+        // itemToRemove.remove(); // Remove item from UI
+        alert("Item successfully removed from wishlist!");
+      } else {
+        alert("Failed to remove item.");
       }
-
-      console.log(
-        `Sending DELETE request for model: ${model}, email: ${email}`
-      );
-
-      fetch("http://localhost:3000/remove-from-wishlist", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, model }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("Server response:", data);
-          if (data.success) {
-            // itemToRemove.remove(); // Remove item from UI
-            alert("Item successfully removed from wishlist!");
-          } else {
-            alert("Failed to remove item.");
-          }
-        })
-        .catch((error) => {
-          console.error("Error removing item:", error);
-          alert("An error occurred. Please try again.");
-        });
+    })
+    .catch((error) => {
+      console.error("Error removing item:", error);
+      alert("An error occurred. Please try again.");
+    });
 }
+
+document.getElementById("toggleTheme").addEventListener("click", function () {
+  document.body.classList.toggle("dark-theme");
+
+  // Save preference in localStorage
+  if (document.body.classList.contains("dark-theme")) {
+      localStorage.setItem("theme", "dark");
+  } else {
+      localStorage.setItem("theme", "light");
+  }
+});
+
+// Apply saved theme when page loads
+window.addEventListener("load", function () {
+  if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-theme");
+      // this.document.getElementById("toggleTheme").style.color="white";
+      const ii = this.document.getElementById("#toggleTheme");
+      ii.style.color="black";
+  }
+});
 
 // Example function to handle adding to cart
 

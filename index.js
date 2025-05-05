@@ -44,6 +44,8 @@
                 wishButtonDiv.style.display="block"; // Show text on hover
                 shoeDiv.style.backgroundColor = "#F1F0E8";
                 CartButtonDiv.style.display="block";
+                quickView.style.display="block";
+
             });
             shoeDiv.addEventListener("mouseout", () => {
                 shoeDiv.style.transform = "scale(1)";
@@ -51,6 +53,8 @@
                 wishButtonDiv.style.display="none"// Hide text when not hovering
                 shoeDiv.style.backgroundColor="white";
                 CartButtonDiv.style.display="none";
+                quickView.style.display="none";
+
             });
         
             shoeDiv.classList.add("items");
@@ -94,6 +98,22 @@
 
                 shoeImage.appendChild(CartButtonDiv);
 
+            let quickView = document.createElement("div");
+            quickView.innerHTML =document.createElement("div");
+            quickView.innerHTML=`<button class="quick-view-button" data-model="${shoe.model}" style="font-size:1.5rem; background-color: #DFD0B8; border:none; padding:0.5rem; border-radius:1rem">
+                    🔎
+                </button>`  ; 
+                quickView.style.position="absolute";
+                quickView.style.zIndex="10";
+                quickView.style.top="9rem";
+                quickView.style.right="1rem";
+                quickView.style.display="none";
+
+                shoeImage.appendChild(quickView);
+
+
+
+
 
             
 
@@ -105,11 +125,15 @@
     
         
             const shoeText = document.createElement("p");
-            shoeText.innerHTML = `<strong>${shoe.brand}</strong> - ${shoe.model} <br> $${shoe.price} 
+            shoeText.innerHTML = `<strong style="font-size:1.5rem;">${shoe.brand}</strong> - ${shoe.model}<br><strong style="color:aquablue"> $${shoe.price} </strong>
                 <br>
+               
                 
                 `;
-            shoeText.style.display = "none"; // Hide by default
+            shoeDescription = document.createElement("div");
+            // shoeDescription.innerHTML=`<strong>${shoe.description} </strong>` ;
+            // shoeDescription.display="none";   
+            // shoeText.style.display = "none"; // Hide by default
         
             // Append elements
             shoeDiv.appendChild(shoeImage);
@@ -127,6 +151,20 @@
         });
 
 
+        // document.querySelectorAll(".quick-view-button").forEach(button=>
+        // {
+        //     button.addEventListener("click", function(){
+        //         let view = document.createElement("div");
+        //         const model = this.getAttribute("data-model");
+        //         const description = shoes.fil
+                
+        //         view.innerHTML=`<strong>${description} </strong>`;
+        //         shoeDiv.appendChild(view);
+        //     })
+        // }
+        // )
+
+
 
         document.querySelectorAll(".cart-button-div").forEach(button =>{
             button.addEventListener("click", function(){
@@ -134,4 +172,44 @@
                 addToCart(model);
             } )
         })
-        } });
+        } 
+    
+
+
+
+        document.getElementById("toggleTheme").addEventListener("click", function () {
+            document.body.classList.toggle("dark-theme");
+        
+            // Save preference in localStorage
+            if (document.body.classList.contains("dark-theme")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+        
+        // Apply saved theme when page loads
+        window.addEventListener("load", function () {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-theme");
+                // this.document.getElementById("toggleTheme").style.color="white";
+                const ii = this.document.getElementById("#toggleTheme");
+                ii.style.color="black";
+            }
+        });
+
+
+
+        window.setTimeout(()=>
+        {
+            alert("You can also switch to light mode to reduce eye strain 💻");
+        }, 5000);
+
+
+        
+        
+        
+        
+    });
+
+

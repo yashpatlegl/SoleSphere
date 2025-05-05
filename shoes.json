@@ -1,76 +1,85 @@
 {
-  "shoes": [
-      {
-          "brand": "Nike",
-          "model": "Air Max 270",
-          "category": "Sports",
-          "price": 120,
-          "colors": ["Black", "White", "Blue"],
-          "sizes": [7, 8, 9, 10, 11],
-          "image_path": "a1.jpg"
-      },
-      {
-          "brand": "Puma",
-          "model": "RS-X3",
-          "category": "Casual",
-          "price": 110,
-          "colors": ["Red", "Green", "Black"],
-          "sizes": [6, 7, 8, 9, 10],
-          "image_path": "a2.jpeg"
-      },
-      {
-          "brand": "Adidas",
-          "model": "UltraBoost 21",
-          "category": "Running",
-          "price": 180,
-          "colors": ["White", "Grey", "Black"],
-          "sizes": [8, 9, 10, 11, 12],
-          "image_path": "a3.jpg"
-      },
-      {
-          "brand": "Nike",
-          "model": "Cortez Classic",
-          "category": "Lifestyle",
-          "price": 90,
-          "colors": ["White", "Red", "Blue"],
-          "sizes": [5, 6, 7, 8],
-          "image_path": "a4.jpeg"
-      },
-      {
-          "brand": "Puma",
-          "model": "Future Rider",
-          "category": "Retro",
-          "price": 85,
-          "colors": ["Yellow", "Grey", "Black"],
-          "sizes": [6, 7, 8, 9],
-          "image_path": "a5.avif"
-      },
-      {
-          "brand": "Adidas",
-          "model": "Stan Smith",
-          "category": "Casual",
-          "price": 75,
-          "colors": ["Green", "White"],
-          "sizes": [7, 8, 9, 10],
-          "image_path": "a6.jpeg"
-      },
-      {
-          "brand": "Nike",
-          "model": "ZoomX Vaporfly",
-          "category": "Running",
-          "price": 250,
-          "colors": ["Blue", "Pink", "Black"],
-          "sizes": [8, 9, 10, 11],
-          "image_path": "a7.jpg"
-      },
-      {
-          "brand": "Puma",
-          "model": "Ignite Flash",
-          "category": "Training",
-          "price": 100,
-          "colors": ["Black", "Orange", "Grey"],
-          "sizes": [6, 7, 8, 9],
-          "image_path": "a8.jpg"
-      }
-  ]
-}
+    "shoes": [
+        {
+            "brand": "Nike",
+            "model": "Air Max 270",
+            "category": "Sports",
+            "price": 120,
+            "colors": ["Black", "White", "Blue"],
+            "sizes": [7, 8, 9, 10, 11],
+            "image_path": "a1.jpg",
+            "description": "A stylish and comfortable sports shoe featuring Nike's signature Air Max cushioning for superior impact protection and responsiveness."
+        },
+        {
+            "brand": "Puma",
+            "model": "RS-X3",
+            "category": "Casual",
+            "price": 110,
+            "colors": ["Red", "Green", "Black"],
+            "sizes": [6, 7, 8, 9, 10],
+            "image_path": "a2.jpeg",
+            "description": "A retro-inspired casual sneaker with bold, colorful accents and an extra-cushioned midsole for all-day comfort."
+        },
+        {
+            "brand": "Adidas",
+            "model": "UltraBoost 21",
+            "category": "Running",
+            "price": 180,
+            "colors": ["White", "Grey", "Black"],
+            "sizes": [8, 9, 10, 11, 12],
+            "image_path": "a12.jpg",
+            "description": "High-performance running shoes designed with Adidas' Boost cushioning for energy return and a lightweight, breathable upper."
+        },
+        {
+            "brand": "Nike",
+            "model": "Cortez Classic",
+            "category": "Lifestyle",
+            "price": 90,
+            "colors": ["White", "Red", "Blue"],
+            "sizes": [5, 6, 7, 8],
+            "image_path": "a15.jpg",
+            "description": "An iconic lifestyle sneaker featuring a sleek design, durable construction, and timeless appeal for casual everyday wear."
+        },
+        {
+            "brand": "Puma",
+            "model": "Future Rider",
+            "category": "Retro",
+            "price": 85,
+            "colors": ["Yellow", "Grey", "Black"],
+            "sizes": [6, 7, 8, 9],
+            "image_path": "a5.avif",
+            "description": "A modern take on a classic retro sneaker, combining a lightweight feel with vibrant colorways for a stylish streetwear look."
+        },
+        {
+            "brand": "Adidas",
+            "model": "Stan Smith",
+            "category": "Casual",
+            "price": 75,
+            "colors": ["Green", "White"],
+            "sizes": [7, 8, 9, 10],
+            "image_path": "a6.jpeg",
+            "description": "A timeless casual sneaker with a minimalistic design, premium leather construction, and a comfortable fit for everyday wear."
+        },
+        {
+            "brand": "Nike",
+            "model": "ZoomX Vaporfly",
+            "category": "Running",
+            "price": 250,
+            "colors": ["Blue", "Pink", "Black"],
+            "sizes": [8, 9, 10, 11],
+            "image_path": "a7.jpg",
+            "description": "Elite-level running shoes built for speed, featuring ZoomX foam for maximum energy return and an aerodynamic design for performance."
+        },
+        {
+            "brand": "Puma",
+            "model": "Ignite Flash",
+            "category": "Training",
+            "price": 100,
+            "colors": ["Black", "Orange", "Grey"],
+            "sizes": [6, 7, 8, 9],
+            "image_path": "a8.jpg",
+            "description": "A lightweight and breathable training shoe with Ignite foam cushioning, providing excellent responsiveness and durability."
+        }
+    ]
+  }
+  

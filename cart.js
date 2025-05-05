@@ -36,11 +36,13 @@ function fetchCartItem() {
           photoItem.className = "photo";
           photoItem.style.width = "30%";
           photoItem.style.height = "95%";
+          photoItem.style.borderRadius="1rem"
           photoItem.style.backgroundImage = `url('images/${details.image_path}')`;
           photoItem.style.backgroundSize = "cover";
 
           // Item Details
           const itemElement = document.createElement("div");
+          itemElement.style.borderRadius="1rem";
           itemElement.className = "information";
           itemElement.innerHTML = `
                         <p><strong>Model: ${details.model}</strong></p>
@@ -70,14 +72,7 @@ function fetchCartItem() {
           totalBill += details.price;
         });
 
-        // document.querySelectorAll(".trash").forEach((button) => {
-        //   button.addEventListener("click", function () {
-        //     let itemToRemove = this.closest(".box");
-        //     if(itemToRemove){
-        //      itemToRemove.remove()
-        //     }
-        //   });
-        // });
+        
 
         // Create Total Bill Section
         bill1.innerHTML = "";
@@ -131,7 +126,7 @@ function fetchCartItem() {
         bill1.appendChild(totalBillElement);
         bill1.appendChild(bolt);
       } else {
-        wishlistContainer.innerHTML = "<div><h2><i>No items found in your cart.!!🗒️</i></h2><br><h3>Go to our site and add your favourites to your Cart🏃‍➡️</h3></div>";
+        wishlistContainer.innerHTML = "<p><i>Your Wish List is Empty!!!🗒️</i></p><br><p>Go and grab your favourites in your list before the deal ends 🕰️</p>";
       }
     })
     .catch((error) => {
@@ -140,6 +135,28 @@ function fetchCartItem() {
         "<p>Something went wrong. Please try again later.</p>";
     });
 }
+
+
+document.getElementById("toggleTheme").addEventListener("click", function () {
+  document.body.classList.toggle("dark-theme");
+
+  // Save preference in localStorage
+  if (document.body.classList.contains("dark-theme")) {
+      localStorage.setItem("theme", "dark");
+  } else {
+      localStorage.setItem("theme", "light");
+  }
+});
+
+// Apply saved theme when page loads
+window.addEventListener("load", function () {
+  if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-theme");
+      // this.document.getElementById("toggleTheme").style.color="white";
+      const ii = this.document.getElementById("#toggleTheme");
+      ii.style.color="black";
+  }
+});
 
 
 

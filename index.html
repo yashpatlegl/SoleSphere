@@ -1,90 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SolesSphere</title>
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
-    
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="navbar.css" />
+  </head>
+  <body>
     <div class="main">
-        <div class="navbar">
-            <p id="soles">
-                <a style="text-decoration: none; color: black;" href="/index.html"><strong style="color: aqua">S</strong><strong>olesSphere</strong></a>
-            </p>
-            <div class="icon">
-                <a href="/contact.html"><i class="fa fa-phone" style="font-size: 24px"></i></a>
-                <a href="/login.html"><i class="fa fa-sign-in" style="font-size: 24px"></i></a>
-            </div>
+      <div class="navbar">
+        <p id="soles">
+          <a style="text-decoration: none; color: black" href="/index.html"
+            ><strong style="color: aqua">S</strong
+            ><strong>olesSphere</strong></a
+          >
+        </p>
+        <div class="icon">
+          <a href="/contact.html"
+            ><i class="fa fa-phone" style="font-size: 24px"></i
+          ></a>
+          <a href="/login.html"
+            ><i class="fa fa-sign-in" style="font-size: 24px"></i
+          ></a>
+          <a><i id="toggleTheme" class="fa-solid fa-lightbulb" style="font-size: 24px"></i></a>
         </div>
-
-        <div id="index_home">
-            <div class="container">
-                <p style="color: white; text-align: justify; font-size: 1.5rem;">
-        
-
-                    Welcome to our great great Shoes selling Wesbite where you will get the 
-                    best shoes and also in the best prices providing you the best online 
-                    shopping experience!!
-            
-
-                </p>
-                <a href="#collection"><button id="but11">
-                    Shop Now
-                    <i class="far fa-arrow-alt-circle-right"></i>
-                </button></a>
-            </div>
-            <div class="video-background">
-                <video autoplay loop muted>
-                    <source src="/video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-
-        <div id="collection">
-            <div class="second_div">
-                <div class="mens_collection">
-                    <h4 style="font-size: 1.5rem; color:aliceblue" >MEN'S COLLECTION</h4>
-                    <a href="#shoe-container"><button class="explore">EXPLORE ALL</button></a>
-                </div>
-                <div  class="women_collection">
-                    <h4 style="font-size: 1.5rem; color:aliceblue">WOMEN'S COLLECTION</h4>
-                    <a href="#shoe-container"><button class="explore">EXPLORE ALL</button></a>
-                </div>
-                <div class="sports_collection">
-                    <h4 style="font-size: 1.5rem; color:aliceblue">SPORTS COLLECTION</h4>
-                    <a href="#shoe-container"><button class="explore">EXPLORE ALL</button></a>
-                </div>
-            </div>
-
-            <div class="third">
-                <button class="filter-btn" data-brand="all">All</button>
-                <button class="filter-btn" data-brand="nike">Nike</button>
-                <button class="filter-btn" data-brand="adidas">Adidas</button>
-                <button class="filter-btn" data-brand="puma">Puma</button>
-                <button class="filter-btn" data-brand="bata">Bata</button>
-                <button class="filter-btn" data-brand="apex">Apex</button>
-            </div>
-           
-        </div>
-        <div class="fourth">
-          <h1>Men's Collections</h1>
-          <div id="shoe-container" class="gridItems">
-            
-          </div>
       </div>
 
-        
+      <div id="index_home">
+        <div class="container">
+          <p style="color: white; text-align: justify; font-size: 1.5rem">
+            Welcome to our great great Shoes selling Wesbite where you will get
+            the best shoes and also in the best prices providing you the best
+            online shopping experience!!
+          </p>
+          <!-- <a href="#collection"><button id="but11">
+                    Shop Now
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                </button></a> -->
+        </div>
+        <div class="video-background">
+          <video autoplay loop muted>
+            <source src="/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div id="collection">
+        <div class="second_div">
+          <div id="mens_collection" class="display-template">
+            <h4 style="font-size: 1.5rem; color: aliceblue">
+              MEN'S COLLECTION
+            </h4>
+            <a href="#shoe-container"
+              ><button class="explore">EXPLORE ALL</button></a
+            >
+          </div>
+          <div id="women_collection" class="display-template">
+            <h4 style="font-size: 1.5rem; color: aliceblue">
+              WOMEN'S COLLECTION
+            </h4>
+            <a href="#shoe-container"
+              ><button class="explore">EXPLORE ALL</button></a
+            >
+          </div>
+          <div id="sports_collection" class="display-template">
+            <h4 style="font-size: 1.5rem; color: aliceblue">
+              SPORTS COLLECTION
+            </h4>
+            <a href="#shoe-container"
+              ><button class="explore">EXPLORE ALL</button></a
+            >
+          </div>
+        </div>
+
+        <div class="third">
+            
+          <button class="filter-btn" data-brand="all">All</button>
+          <button class="filter-btn" data-brand="nike">Nike</button>
+          <button class="filter-btn" data-brand="adidas">Adidas</button>
+          <button class="filter-btn" data-brand="puma">Puma</button>
+          <button class="filter-btn" data-brand="bata">Bata</button>
+          <button class="filter-btn" data-brand="apex">Apex</button>
+        </div>
+      </div>
+      <div class="fourth">
+        <h1>Men's Collections</h1>
+        <div id="shoe-container" class="gridItems"></div>
+      </div>
     </div>
     <script defer src="navbar.js"></script>
     <script defer src="index.js"></script>
     <!-- <script src="login.js"></script> -->
-</body>
+  </body>
 </html>

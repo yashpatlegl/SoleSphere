@@ -9,7 +9,26 @@ body{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
+    transition: 0.3s ease-in-out;
     
+}
+
+#toggleTheme{
+    transition: transform 0.3s ease-in-out;
+    color: black;
+}
+
+#toggleTheme:hover{
+    transform: scale(1.5);
+}
+
+
+/* Dark mode */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 h1{ 
     text-align: center;
@@ -97,7 +116,7 @@ h1{
  border: none;
 }
 
-.mens_collection{
+#mens_collection{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -110,7 +129,7 @@ h1{
     height: 40%;
     background-color: red;
 }
-.women_collection{
+#women_collection{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -123,7 +142,7 @@ h1{
     height: 40%;
     background-color: green;
 }
-.sports_collection{
+#sports_collection{
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -135,6 +154,15 @@ h1{
     width: 25%;
     height: 40%;
     background-color: yellow;
+}
+
+.display-template{
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.display-template:hover{
+    transform: scale(1.1);
 }
 
 
@@ -199,14 +227,14 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
+
 .gridItems{
     overflow-x: hidden;
     height:150vh;
     width: 100%;
-    /* position: fixed ; */
-    /* background-color: aquamarine; */
     display: grid;
     gap: 2rem;
     grid-template-rows: repeat(2, 1fr);
@@ -236,6 +264,7 @@ a{
     font-size: 1.5rem;
     transition: transform 0.3s ease-in-out;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .filter-btn:hover{

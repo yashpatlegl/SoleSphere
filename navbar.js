@@ -1,32 +1,4 @@
 
-
-
-//   loginBtn.addEventListener('click', () => {
-
-
-//     const email = document.querySelector('.sign-in input[type="email"]').value;
-//     const password = document.querySelector('.sign-in input[type="password"]').value;
-
-//     const user = accounts.find(account => account.email === email && account.password === password);
-
-//     if (user) {
-//         sessionStorage.setItem("email", email);
-//         sessionStorage.setItem("userLoggedIn", "true");
-//         updateNavbar();
-//         console.log(`Login successful: Welcome, ${user.username}!`);
-//         event.preventDefault();
-//         // Redirect to index.html
-//         window.location.href = "index.html";
-
-//         // Redirect to another page or display user dashboard here
-//     } else {
-//         console.log('Invalid email or password.');
-//         alert('Invalid email or password. Please try again.');
-//     }
-
-//     container.classList.remove("active"); // Switch to Sign Up
-// });
-
 // Navbar update function for user login/logout
 function updateNavbar() {
     let iconDiv = document.querySelector(".icon");
@@ -37,11 +9,6 @@ function updateNavbar() {
       let wishlink = document.createElement("a");
       wishlink.href = "wishlist.html";
 
-    //   let wishlistIcon = document.createElement("i");
-    //   wishlistIcon.className = "fa fa-heart";
-    //   wishlistIcon.style.fontSize = "24px";
-    //   wishlink.appendChild(wishlistIcon);
-
 // Get the logged-in user's email from sessionStorage
 let userEmail = sessionStorage.getItem("email"); // Ensure this is stored during login
 
@@ -51,10 +18,6 @@ fetch("backend/wishlist.json")
   .then(wishlistData => {
     // Retrieve the array for this user and get its length
     let wishlistCountValue = wishlistData[userEmail] ? wishlistData[userEmail].length : 0;
-
-    // Create wishlist link wrapper
-    // let wishlink = document.createElement("a");
-    // wishlink.href = "wishlist.html";
     wishlink.style.position = "relative";
     wishlink.style.display = "inline-block";
 
@@ -96,47 +59,7 @@ fetch("backend/wishlist.json")
       let bagIcon = document.createElement("a");
       bagIcon.href="cart.html";
 
-    //   let shoppingBagIcon = document.createElement("i");
-    //   shoppingBagIcon.className = "fa fa-shopping-bag";
-    //   shoppingBagIcon.style.fontSize = "24px";
-    //   bagIcon.appendChild(shoppingBagIcon);
-
-
-
-//     // Create a wrapper div
-// let bagIconWrapper = document.createElement("div");
-// bagIconWrapper.style.position = "relative";
-// bagIconWrapper.style.display = "inline-block";
-
-// // Create the shopping bag icon
-// let shoppingBagIcon = document.createElement("i");
-// shoppingBagIcon.className = "fa fa-shopping-bag";
-// shoppingBagIcon.style.fontSize = "24px";
-
-// // Create the number badge
-// let itemCount = document.createElement("span");
-// itemCount.innerText = "5"; // Set cart count dynamically
-// itemCount.style.position = "absolute";
-// itemCount.style.top = "-5px";
-// itemCount.style.right = "-10px";
-// itemCount.style.backgroundColor = "red";
-// itemCount.style.color = "white";
-// itemCount.style.padding = "4px 6px";
-// itemCount.style.borderRadius = "50%";
-// itemCount.style.fontSize = "12px";
-// itemCount.style.fontWeight = "bold";
-
-// // Append elements
-// bagIconWrapper.appendChild(shoppingBagIcon);
-// bagIconWrapper.appendChild(itemCount);
-// bagIcon.appendChild(bagIconWrapper);  // Change this if needed
-
-    
-
-// Get the logged-in user's email from sessionStorage
-// let userEmail = sessionStorage.getItem("email"); // Ensure this is stored during login
-
-// Fetch the cart data from the cart.json file
+ 
 fetch("backend/cart.json")
   .then(response => response.json()) // Convert response to JSON
   .then(cartData => {
@@ -206,6 +129,7 @@ fetch("backend/cart.json")
           iconDiv.removeChild(logoutButton);
           iconDiv.appendChild(loginLink);
           sessionStorage.clear();
+          window.location.href="index.html"
         }
       });
     }
@@ -220,7 +144,7 @@ fetch("backend/cart.json")
     
 
     if (!email || !model) {
-        alert("Both email and model fields are required.");
+        alert("Please sign-in to add your favourites in your Wishlist❤️");
         window.location.href = "/login.html";
         return;
     }
@@ -246,7 +170,7 @@ fetch("backend/cart.json")
   
     const email = sessionStorage.getItem("email");
     if (!email || !model) {
-      alert("Both email and model fields are required.");
+      alert("Please sign-in to add your favourites in your Cart❤️");
       window.location.href = "/login.html";
       return;
     }

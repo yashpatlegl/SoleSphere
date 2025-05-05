@@ -23,6 +23,29 @@ body{
     height: 100vh;
     box-sizing: border-box;
 }
+
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    transition: 0.3s ease-in-out;
+}
+
+/* Dark mode */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+#toggleTheme{
+    transition: transform 0.3s ease-in-out;
+    color: black;
+}
+
+#toggleTheme:hover{
+    transform: scale(1.5);
+}
+
 .navbar{
     margin: 0%;
     padding: 0%;
@@ -72,6 +95,7 @@ ul{
     gap: 2rem;
 }
 .box{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #ECEBDE;
     /* padding-left: 2rem;
      padding-left: 1rem; 
@@ -87,7 +111,11 @@ ul{
     width: 50vw;
     height: 30vh;
     border: 1px solid black;
+    transition: transform 0.3s ease-in-out;
     
+}
+.box:hover{
+    transform: scale(1.05);
 }
 
 .cartdelete{
@@ -106,6 +134,16 @@ ul{
     height: 15em;
     background-image: url('/images/w8.avif');
     background-size: cover;
+}
+
+
+
+.collections{
+    padding: 2rem;
+    font-size:2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-content: center;
+
 }
 .information{
     width: 60%;
