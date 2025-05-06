@@ -1,0 +1,63 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+body{
+    /* position: relative; */
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(288deg, rgb(98, 171, 231),  rgb(98, 171, 231)); */
+}
+
+#name{
+    font-size: 2rem;
+    display: block;
+    width: 100vw;
+    background: linear-gradient(288deg, rgb(101, 88, 106),  rgb(45, 52, 58));
+    color: aliceblue;
+
+}
+
+#reviews-container{
+    background: linear-gradient(288deg, rgb(205, 173, 217),  rgb(130, 189, 237));
+    /* position: absolute; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2rem;
+    width: 65%;
+    height: 60vh;
+    border: 2px solid black;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2rem;
+    font-size: 1.2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+#time-span{
+    transition: transform 0.3s ease-in-out;
+}
+
+.yash{
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.yash:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    
+}
+
+#reviews-container:hover{
+    transform: scale(1.04);
+}

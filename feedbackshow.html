@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reviews</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="feedbackshow.css">
+  </head>
+  <body>
+    <h1 id="name"></h1>
+    <div id="time-span"></div>
+    <div id="reviews-container">Loading reviews...</div>
+
+    <script>
+      function fetchReview() {
+        const email = sessionStorage.getItem("email");
+        fetch(`http://localhost:3000/reviews/${email}`)
+          .then((response) => response.json())
+          .then((data) => {
+
+            const name1 = document.getElementById("name");
+            name1.innerHTML=`Reviews for ${data.email}`;
+
+            const time_ss = document.getElementById("time-span");
+            const reviewDiv= document.getElementById("reviews-container");
+            reviewDiv.innerHTML="";
+            data.reviews.forEach(element => {
+            
+                const diva=document.createElement("div");
+                diva.className="yash";
+                diva.innerHTML=`
+                ${element.review}
+                `
+                reviewDiv.appendChild(diva);
+                console.log(element.review);
+                
+            });
+
+          })
+          .catch((error) => {
+            console.error("Error fetching wishlist:", error);
+          });
+      }
+      fetchReview();
+
+
+    </script>
+  </body>
+</html>

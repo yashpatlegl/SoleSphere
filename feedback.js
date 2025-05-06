@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.classList.add("background-elements");
     document.body.appendChild(container);
   
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 17; i++) {
       let shape = document.createElement("div");
       shape.classList.add("shape");
       shape.style.left = `${Math.random() * 100}vw`;
@@ -96,4 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       container.appendChild(shape);
     }
   });
+
+ 
   
