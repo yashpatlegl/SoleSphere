@@ -15,7 +15,11 @@ document.getElementById("speech").addEventListener("click", function (e) {
     feedback += `${transcript}`;
     const texta = document.getElementById("feedback-input");
     let previous = texta.innerHTML;
-    texta.innerHTML = previous + `  ${transcript}`;
+    if(transcript)
+    {
+      texta.innerHTML = previous + `  ${transcript}`;
+    }
+   
   };
 });
 

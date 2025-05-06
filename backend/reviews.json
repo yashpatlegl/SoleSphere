@@ -204,6 +204,57 @@
         ],
         "negative": []
       }
+    },
+    {
+      "review": "it was good",
+      "timestamp": "2025-05-06T08:57:55.934Z",
+      "sentimentAnalysis": {
+        "score": 3,
+        "comparative": 1,
+        "calculation": [
+          {
+            "good": 3
+          }
+        ],
+        "tokens": [
+          "it",
+          "was",
+          "good"
+        ],
+        "words": [
+          "good"
+        ],
+        "positive": [
+          "good"
+        ],
+        "negative": []
+      }
+    },
+    {
+      "review": "  the product is worst",
+      "timestamp": "2025-05-06T09:02:01.840Z",
+      "sentimentAnalysis": {
+        "score": -3,
+        "comparative": -0.75,
+        "calculation": [
+          {
+            "worst": -3
+          }
+        ],
+        "tokens": [
+          "the",
+          "product",
+          "is",
+          "worst"
+        ],
+        "words": [
+          "worst"
+        ],
+        "positive": [],
+        "negative": [
+          "worst"
+        ]
+      }
     }
   ],
   "anshu@gmail.com": [
@@ -287,7 +338,7 @@
     },
     {
       "review": "Installation was straightforward.",
-      "timestamp": "2025-05-05T09:09:15.468Z",
+      "timestamp": "2025-05-03T09:09:15.468Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -306,7 +357,7 @@
   "sana@gmail.com": [
     {
       "review": "Not worth the prce. Very disapointing.",
-      "timestamp": "2025-05-05T08:02:23.587Z",
+      "timestamp": "2025-05-03T08:02:23.587Z",
       "sentimentAnalysis": {
         "score": -4,
         "comparative": -0.6666666666666666,
@@ -376,7 +427,7 @@
     },
     {
       "review": "Very pleased with the purchase.",
-      "timestamp": "2025-05-05T09:09:00.086Z",
+      "timestamp": "2025-05-03T09:09:00.086Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.6,
@@ -403,7 +454,7 @@
     },
     {
       "review": "Sleek and minimalistic design.",
-      "timestamp": "2025-05-05T09:09:15.746Z",
+      "timestamp": "2025-05-03T09:09:15.746Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -421,7 +472,7 @@
     },
     {
       "review": "that product was awesome",
-      "timestamp": "2025-05-05T09:32:23.989Z",
+      "timestamp": "2025-05-03T09:32:23.989Z",
       "sentimentAnalysis": {
         "score": 4,
         "comparative": 1,
@@ -447,7 +498,7 @@
     },
     {
       "review": "that projuct was good",
-      "timestamp": "2025-05-05T09:34:49.696Z",
+      "timestamp": "2025-05-03T09:34:49.696Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.75,
@@ -475,7 +526,7 @@
   "tanu@gmail.com": [
     {
       "review": "Item arived late and custmer support was unhelpfl.",
-      "timestamp": "2025-05-05T08:03:43.863Z",
+      "timestamp": "2025-05-03T08:03:43.863Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.25,
@@ -505,7 +556,7 @@
     },
     {
       "review": "Works as described. Satisfied with the purchase.",
-      "timestamp": "2025-05-05T09:08:47.929Z",
+      "timestamp": "2025-05-03T09:08:47.929Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.2857142857142857,
@@ -534,7 +585,7 @@
     },
     {
       "review": "Unboxing was fun and product was spotless.",
-      "timestamp": "2025-05-05T09:08:59.943Z",
+      "timestamp": "2025-05-03T09:08:59.943Z",
       "sentimentAnalysis": {
         "score": 6,
         "comparative": 0.8571428571428571,
@@ -568,7 +619,7 @@
     },
     {
       "review": "I encountered multiple issues using it.",
-      "timestamp": "2025-05-05T09:09:16.091Z",
+      "timestamp": "2025-05-03T09:09:16.091Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -590,7 +641,7 @@
   "k@gmial.com": [
     {
       "review": "I absolutly adore this! Will buy agan.",
-      "timestamp": "2025-05-05T08:04:14.694Z",
+      "timestamp": "2025-05-03T08:04:14.694Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.42857142857142855,
@@ -619,7 +670,7 @@
     },
     {
       "review": "Terrible experience. I will not buy from here again.",
-      "timestamp": "2025-05-05T09:08:48.540Z",
+      "timestamp": "2025-05-03T09:08:48.540Z",
       "sentimentAnalysis": {
         "score": -3,
         "comparative": -0.3333333333333333,
@@ -650,7 +701,7 @@
     },
     {
       "review": "Misleading description. Disappointed.",
-      "timestamp": "2025-05-05T09:09:00.243Z",
+      "timestamp": "2025-05-03T09:09:00.243Z",
       "sentimentAnalysis": {
         "score": -5,
         "comparative": -1.6666666666666667,
@@ -680,7 +731,7 @@
     },
     {
       "review": "It’s decent, but there are better options.",
-      "timestamp": "2025-05-05T09:09:16.300Z",
+      "timestamp": "2025-05-03T09:09:16.300Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.2857142857142857,
@@ -711,7 +762,7 @@
   "testuser@example.com": [
     {
       "review": "Absolutely loved the product. Highly recommended!",
-      "timestamp": "2025-05-05T09:08:47.042Z",
+      "timestamp": "2025-05-03T09:08:47.042Z",
       "sentimentAnalysis": {
         "score": 5,
         "comparative": 0.8333333333333334,
@@ -744,7 +795,7 @@
     },
     {
       "review": "No complaints so far. Great experience.",
-      "timestamp": "2025-05-05T09:08:56.108Z",
+      "timestamp": "2025-05-03T09:08:56.108Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -783,7 +834,7 @@
     },
     {
       "review": "Absolutely worth every penny.",
-      "timestamp": "2025-05-05T09:09:13.886Z",
+      "timestamp": "2025-05-03T09:09:13.886Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.5,
@@ -811,7 +862,7 @@
   "p@gmail.com": [
     {
       "review": "Very disappointed with the quality. Not worth the price.",
-      "timestamp": "2025-05-05T09:08:47.399Z",
+      "timestamp": "2025-05-03T09:08:47.399Z",
       "sentimentAnalysis": {
         "score": -2,
         "comparative": -0.2222222222222222,
@@ -853,7 +904,7 @@
     },
     {
       "review": "Responsive seller and fast resolution of issues.",
-      "timestamp": "2025-05-05T09:08:56.576Z",
+      "timestamp": "2025-05-03T09:08:56.576Z",
       "sentimentAnalysis": {
         "score": 4,
         "comparative": 0.5714285714285714,
@@ -909,7 +960,7 @@
   "triveni@example.com": [
     {
       "review": "Amazing build quality and smooth performance.",
-      "timestamp": "2025-05-05T09:08:48.269Z",
+      "timestamp": "2025-05-03T09:08:48.269Z",
       "sentimentAnalysis": {
         "score": 6,
         "comparative": 1,
@@ -942,7 +993,7 @@
     },
     {
       "review": "It gets the job done.",
-      "timestamp": "2025-05-05T09:09:00.419Z",
+      "timestamp": "2025-05-03T09:09:00.419Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -961,7 +1012,7 @@
     },
     {
       "review": "Very durable and rugged design.",
-      "timestamp": "2025-05-05T09:09:16.552Z",
+      "timestamp": "2025-05-03T09:09:16.552Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.4,
@@ -990,7 +1041,7 @@
   "priya@example.com": [
     {
       "review": "It’s okay, does the job but nothing special.",
-      "timestamp": "2025-05-05T09:08:48.842Z",
+      "timestamp": "2025-05-03T09:08:48.842Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1012,7 +1063,7 @@
     },
     {
       "review": "Exceeded my expectations for this price.",
-      "timestamp": "2025-05-05T09:09:00.785Z",
+      "timestamp": "2025-05-03T09:09:00.785Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1032,7 +1083,7 @@
     },
     {
       "review": "Nothing special, just average.",
-      "timestamp": "2025-05-05T09:09:16.921Z",
+      "timestamp": "2025-05-03T09:09:16.921Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1052,7 +1103,7 @@
   "vedant@example.com": [
     {
       "review": "Fantastic! Met all my expectations.",
-      "timestamp": "2025-05-05T09:08:49.260Z",
+      "timestamp": "2025-05-03T09:08:49.260Z",
       "sentimentAnalysis": {
         "score": 4,
         "comparative": 0.8,
@@ -1079,7 +1130,7 @@
     },
     {
       "review": "Feels sturdy and well-made.",
-      "timestamp": "2025-05-05T09:09:02.228Z",
+      "timestamp": "2025-05-03T09:09:02.228Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1097,7 +1148,7 @@
     },
     {
       "review": "Blown away by how well it works.",
-      "timestamp": "2025-05-05T09:09:16.758Z",
+      "timestamp": "2025-05-03T09:09:16.758Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1120,7 +1171,7 @@
   "raj@example.com": [
     {
       "review": "The product stopped working after a week.",
-      "timestamp": "2025-05-05T09:08:49.535Z",
+      "timestamp": "2025-05-03T09:08:49.535Z",
       "sentimentAnalysis": {
         "score": -1,
         "comparative": -0.14285714285714285,
@@ -1149,7 +1200,7 @@
     },
     {
       "review": "I had to return it due to a defect.",
-      "timestamp": "2025-05-05T09:09:00.959Z",
+      "timestamp": "2025-05-03T09:09:00.959Z",
       "sentimentAnalysis": {
         "score": -3,
         "comparative": -0.3333333333333333,
@@ -1180,7 +1231,7 @@
     },
     {
       "review": "Not as pictured, a bit misleading.",
-      "timestamp": "2025-05-05T09:09:17.213Z",
+      "timestamp": "2025-05-03T09:09:17.213Z",
       "sentimentAnalysis": {
         "score": -3,
         "comparative": -0.5,
@@ -1210,7 +1261,7 @@
   "amit@example.com": [
     {
       "review": "Very easy to use and setup was quick.",
-      "timestamp": "2025-05-05T09:08:49.872Z",
+      "timestamp": "2025-05-03T09:08:49.872Z",
       "sentimentAnalysis": {
         "score": 1,
         "comparative": 0.125,
@@ -1240,7 +1291,7 @@
     },
     {
       "review": "Highly functional and attractive design.",
-      "timestamp": "2025-05-05T09:09:02.400Z",
+      "timestamp": "2025-05-03T09:09:02.400Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.4,
@@ -1267,7 +1318,7 @@
     },
     {
       "review": "Compact and efficient product.",
-      "timestamp": "2025-05-05T09:09:17.418Z",
+      "timestamp": "2025-05-03T09:09:17.418Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1287,7 +1338,7 @@
   "atherv@example.com": [
     {
       "review": "Item matched the description exactly.",
-      "timestamp": "2025-05-05T09:08:50.152Z",
+      "timestamp": "2025-05-03T09:08:50.152Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1306,7 +1357,7 @@
     },
     {
       "review": "Average quality. Not bad, not great.",
-      "timestamp": "2025-05-05T09:09:02.600Z",
+      "timestamp": "2025-05-03T09:09:02.600Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.3333333333333333,
@@ -1345,7 +1396,7 @@
     },
     {
       "review": "Needed replacement within days.",
-      "timestamp": "2025-05-05T09:09:17.584Z",
+      "timestamp": "2025-05-03T09:09:17.584Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1365,7 +1416,7 @@
   "rohit@example.com": [
     {
       "review": "I received a damaged item and had to return it.",
-      "timestamp": "2025-05-05T09:08:50.334Z",
+      "timestamp": "2025-05-03T09:08:50.334Z",
       "sentimentAnalysis": {
         "score": -3,
         "comparative": -0.3,
@@ -1397,7 +1448,7 @@
     },
     {
       "review": "Amazing experience from order to delivery.",
-      "timestamp": "2025-05-05T09:09:02.766Z",
+      "timestamp": "2025-05-03T09:09:02.766Z",
       "sentimentAnalysis": {
         "score": 4,
         "comparative": 0.6666666666666666,
@@ -1425,7 +1476,7 @@
     },
     {
       "review": "Great for beginners and easy to learn.",
-      "timestamp": "2025-05-05T09:09:17.802Z",
+      "timestamp": "2025-05-03T09:09:17.802Z",
       "sentimentAnalysis": {
         "score": 4,
         "comparative": 0.5714285714285714,
@@ -1461,7 +1512,7 @@
   "sneha@example.com": [
     {
       "review": "Good value for money. Will buy again.",
-      "timestamp": "2025-05-05T09:08:50.598Z",
+      "timestamp": "2025-05-03T09:08:50.598Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.42857142857142855,
@@ -1490,7 +1541,7 @@
     },
     {
       "review": "Cheap materials and weak performance.",
-      "timestamp": "2025-05-05T09:09:03.333Z",
+      "timestamp": "2025-05-03T09:09:03.333Z",
       "sentimentAnalysis": {
         "score": -2,
         "comparative": -0.4,
@@ -1517,7 +1568,7 @@
     },
     {
       "review": "Feels flimsy and unreliable.",
-      "timestamp": "2025-05-05T09:09:18.088Z",
+      "timestamp": "2025-05-03T09:09:18.088Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1537,7 +1588,7 @@
   "akash@example.com": [
     {
       "review": "Not as durable as I hoped.",
-      "timestamp": "2025-05-05T09:08:50.792Z",
+      "timestamp": "2025-05-03T09:08:50.792Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.3333333333333333,
@@ -1565,7 +1616,7 @@
     },
     {
       "review": "I’m very happy with my purchase.",
-      "timestamp": "2025-05-05T09:09:03.150Z",
+      "timestamp": "2025-05-03T09:09:03.150Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.5,
@@ -1593,7 +1644,7 @@
     },
     {
       "review": "I’ve recommended this to friends.",
-      "timestamp": "2025-05-05T09:09:18.291Z",
+      "timestamp": "2025-05-03T09:09:18.291Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.4,
@@ -1622,7 +1673,7 @@
   "deepa@example.com": [
     {
       "review": "The color was slightly different from the picture.",
-      "timestamp": "2025-05-05T09:08:50.958Z",
+      "timestamp": "2025-05-03T09:08:50.958Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1644,7 +1695,7 @@
     },
     {
       "review": "Product arrived sooner than expected.",
-      "timestamp": "2025-05-05T09:09:03.550Z",
+      "timestamp": "2025-05-03T09:09:03.550Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1663,7 +1714,7 @@
     },
     {
       "review": "The screen quality is fantastic.",
-      "timestamp": "2025-05-05T09:09:18.482Z",
+      "timestamp": "2025-05-03T09:09:18.482Z",
       "sentimentAnalysis": {
         "score": 6,
         "comparative": 1.2,
@@ -1697,7 +1748,7 @@
   "vikas@example.com": [
     {
       "review": "Customer support was helpful and resolved my issue quickly.",
-      "timestamp": "2025-05-05T09:08:51.142Z",
+      "timestamp": "2025-05-03T09:08:51.142Z",
       "sentimentAnalysis": {
         "score": 6,
         "comparative": 0.6666666666666666,
@@ -1738,7 +1789,7 @@
     },
     {
       "review": "No user manual was included.",
-      "timestamp": "2025-05-05T09:09:03.828Z",
+      "timestamp": "2025-05-03T09:09:03.828Z",
       "sentimentAnalysis": {
         "score": -1,
         "comparative": -0.2,
@@ -1765,7 +1816,7 @@
     },
     {
       "review": "Very weak performance under stress.",
-      "timestamp": "2025-05-05T09:09:18.662Z",
+      "timestamp": "2025-05-03T09:09:18.662Z",
       "sentimentAnalysis": {
         "score": -3,
         "comparative": -0.6,
@@ -1799,7 +1850,7 @@
   "ananya@example.com": [
     {
       "review": "Product was missing some parts.",
-      "timestamp": "2025-05-05T09:08:51.322Z",
+      "timestamp": "2025-05-03T09:08:51.322Z",
       "sentimentAnalysis": {
         "score": -2,
         "comparative": -0.4,
@@ -1826,7 +1877,7 @@
     },
     {
       "review": "I wouldn’t buy this again.",
-      "timestamp": "2025-05-05T09:09:05.039Z",
+      "timestamp": "2025-05-03T09:09:05.039Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1845,7 +1896,7 @@
     },
     {
       "review": "Flawless functionality and good build.",
-      "timestamp": "2025-05-05T09:09:18.856Z",
+      "timestamp": "2025-05-03T09:09:18.856Z",
       "sentimentAnalysis": {
         "score": 5,
         "comparative": 1,
@@ -1879,7 +1930,7 @@
   "yash@example.com": [
     {
       "review": "It looks nice but feels cheap.",
-      "timestamp": "2025-05-05T09:08:51.614Z",
+      "timestamp": "2025-05-03T09:08:51.614Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.5,
@@ -1907,7 +1958,7 @@
     },
     {
       "review": "Easy to clean and maintain.",
-      "timestamp": "2025-05-05T09:09:05.186Z",
+      "timestamp": "2025-05-03T09:09:05.186Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.6,
@@ -1939,7 +1990,7 @@
     },
     {
       "review": "Not suitable for my needs.",
-      "timestamp": "2025-05-05T09:09:19.092Z",
+      "timestamp": "2025-05-03T09:09:19.092Z",
       "sentimentAnalysis": {
         "score": -2,
         "comparative": -0.4,
@@ -1968,7 +2019,7 @@
   "shivani@example.com": [
     {
       "review": "Shipping took longer than expected.",
-      "timestamp": "2025-05-05T09:08:51.808Z",
+      "timestamp": "2025-05-03T09:08:51.808Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -1987,7 +2038,7 @@
     },
     {
       "review": "The device heats up too quickly.",
-      "timestamp": "2025-05-05T09:09:05.537Z",
+      "timestamp": "2025-05-03T09:09:05.537Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,
@@ -2007,7 +2058,7 @@
     },
     {
       "review": "Everything works perfectly out of the box.",
-      "timestamp": "2025-05-05T09:09:19.252Z",
+      "timestamp": "2025-05-03T09:09:19.252Z",
       "sentimentAnalysis": {
         "score": 3,
         "comparative": 0.42857142857142855,
@@ -2038,7 +2089,7 @@
   "manish@example.com": [
     {
       "review": "Five stars for quality and delivery.",
-      "timestamp": "2025-05-05T09:08:52.105Z",
+      "timestamp": "2025-05-03T09:08:52.105Z",
       "sentimentAnalysis": {
         "score": 2,
         "comparative": 0.3333333333333333,
@@ -2066,7 +2117,7 @@
     },
     {
       "review": "Very stylish and modern look.",
-      "timestamp": "2025-05-05T09:09:05.348Z",
+      "timestamp": "2025-05-03T09:09:05.348Z",
       "sentimentAnalysis": {
         "score": 0,
         "comparative": 0,

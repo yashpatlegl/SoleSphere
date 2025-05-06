@@ -69,3 +69,41 @@ fetch("/backend/reviews.json")
       options: {},
     });
   });
+
+  var arrre=[]
+
+fetch("/backend/reviews.json").then((res)=>{
+  return res.json()
+}).then((ff)=>{
+  Object.values(ff).forEach((mm)=>{
+
+mm.forEach((oo)=>{
+ console.log(oo['review'])
+ arrre.push(oo['review'])
+  // arrre.push[oo['review']]
+  // console.log(arrre)
+  
+})
+  //  mm.forEach((bb)=>{
+  //   const ss= document.querySelectorAll('.box h4')
+  // Array.from(ss).forEach((ee)=>{
+  //   ee.innerHTML=bb['review']
+  // })
+    
+  // console.log()
+  //  })
+  })
+}).then(()=>{
+  console.log(arrre)
+}).then(()=>{
+Array.from(document.querySelectorAll('.fa-trash-can')).forEach((ele)=>{
+  ele.remove()
+})
+
+  const head=document.querySelectorAll('.box h4')
+  Array.from(head).forEach((ele, index)=>{
+    ele.innerHTML=arrre[index]
+    
+  })
+})
+

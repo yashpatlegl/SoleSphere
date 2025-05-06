@@ -178,9 +178,10 @@ div.loader h1 span {
     -o-transform: translateX(-220px);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 786px) {
   .sidebar .xmark {
-    display: none;
+
+  
   }
 }
 .sidebar .brand {
