@@ -331,4 +331,27 @@ i:hover{
     display: block;
   }
       
+
+
+  
+.submit-butt{
+    /* margin: 1rem; */
+    height: 5vh;
+    width: 10vw;
+    background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    touch-action: manipulation;
+    text-decoration: none;
+    font-size: 1.5rem;
+
+}
+
+.submit-butt:hover{
+    transform: scale(1.2);
+}
+
     
