@@ -204,6 +204,57 @@
         ],
         "negative": []
       }
+    },
+    {
+      "review": "it was good",
+      "timestamp": "2025-05-06T08:57:55.934Z",
+      "sentimentAnalysis": {
+        "score": 3,
+        "comparative": 1,
+        "calculation": [
+          {
+            "good": 3
+          }
+        ],
+        "tokens": [
+          "it",
+          "was",
+          "good"
+        ],
+        "words": [
+          "good"
+        ],
+        "positive": [
+          "good"
+        ],
+        "negative": []
+      }
+    },
+    {
+      "review": "  the product is worst",
+      "timestamp": "2025-05-06T09:02:01.840Z",
+      "sentimentAnalysis": {
+        "score": -3,
+        "comparative": -0.75,
+        "calculation": [
+          {
+            "worst": -3
+          }
+        ],
+        "tokens": [
+          "the",
+          "product",
+          "is",
+          "worst"
+        ],
+        "words": [
+          "worst"
+        ],
+        "positive": [],
+        "negative": [
+          "worst"
+        ]
+      }
     }
   ],
   "anshu@gmail.com": [
